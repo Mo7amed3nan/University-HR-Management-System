@@ -10,7 +10,7 @@ BEGIN
     DEclARE @current_status VARCHAR(50);
     
    
-    select @is_on_leave = Is_On_Leave(@Employee_ID, @today, @today); 
+    select @is_on_leave = dbo.Is_On_Leave(@Employee_ID, @today, @today); 
     
 
     if (@is_on_leave = 1)
@@ -57,12 +57,12 @@ AS
 BEGIN
     DECLARE @Today DATE = CAST(GETDATE() AS DATE);
 
-    INSERT INTO Attendance (attendance_date, status, emp_ID)
+    INSERT INTO Attendance (date, status, emp_ID)
     SELECT @Today,
         'Absent',
         e.employee_ID
         FROM Employee e
-        WHERE e.lastworking is not null
+        WHERE e.last_working_date is not null
 END;
 GO
 
@@ -89,7 +89,7 @@ BEGIN
     UPDATE Attendance
     SET check_in_time = @check_in_time,
         check_out_time = @check_out_time,
-        attendance_date = @Today, 
+        date = @Today, 
         status = CASE 
                 WHEN  DATEDIFF(MINUTE, @check_in_time, @check_out_time) / 60.0 >= 8 
                 THEN 'Attended'
@@ -107,7 +107,7 @@ AS
 BEGIN
     DECLARE  @Day_Off VARCHAR(55);
 
-    SELECT @Day_Off = day_off
+    SELECT @Day_Off = official_day_off
     from Employee
     WHERE employee_ID = @employee_ID;
 

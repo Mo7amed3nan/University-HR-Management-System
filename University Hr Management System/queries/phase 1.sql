@@ -160,7 +160,7 @@ BEGIN
         date DATE,
         check_in_time TIME,
         check_out_time TIME,
-        total_duration AS (DATEDIFF(MINUTE, check_in_time, check_out_time)),
+        total_duration AS DATEDIFF(MINUTE, check_in_time, check_out_time),
         status VARCHAR(50)
             DEFAULT 'Absent'
             CHECK (status IN ('Absent', 'Attended')),
