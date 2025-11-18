@@ -71,7 +71,7 @@ BEGIN
         FOREIGN KEY (role_name) REFERENCES Role(role_name)
     );
 
-    CREATE TABLE LeaveTable (
+    CREATE TABLE Leave (
         request_ID INT PRIMARY KEY IDENTITY(1,1),
         date_of_request DATE,
         start_date DATE,
