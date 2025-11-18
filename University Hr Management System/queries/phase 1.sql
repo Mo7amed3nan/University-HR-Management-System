@@ -86,7 +86,7 @@ BEGIN
         request_ID INT PRIMARY KEY,
         emp_ID INT,
         replacement_emp INT,
-        FOREIGN KEY (request_ID) REFERENCES LeaveTable(request_ID),
+        FOREIGN KEY (request_ID) REFERENCES Leave(request_ID),
         FOREIGN KEY (emp_ID) REFERENCES Employee(employee_ID),
         FOREIGN KEY (replacement_emp) REFERENCES Employee(employee_ID)
     );
@@ -94,7 +94,7 @@ BEGIN
     CREATE TABLE Accidental_Leave (
         request_ID INT PRIMARY KEY,
         emp_ID INT,
-        FOREIGN KEY (request_ID) REFERENCES LeaveTable(request_ID),
+        FOREIGN KEY (request_ID) REFERENCES Leave(request_ID),
         FOREIGN KEY (emp_ID) REFERENCES Employee(employee_ID)
     );
 
@@ -104,14 +104,14 @@ BEGIN
         disability_details VARCHAR(50),
         type VARCHAR(50) CHECK (type IN ('sick', 'maternity')),
         emp_ID INT,
-        FOREIGN KEY (request_ID) REFERENCES LeaveTable(request_ID),
+        FOREIGN KEY (request_ID) REFERENCES Leave(request_ID),
         FOREIGN KEY (emp_ID) REFERENCES Employee(employee_ID)
     );
 
     CREATE TABLE Unpaid_Leave (
         request_ID INT PRIMARY KEY,
         emp_ID INT,
-        FOREIGN KEY (request_ID) REFERENCES LeaveTable(request_ID),
+        FOREIGN KEY (request_ID) REFERENCES Leave(request_ID),
         FOREIGN KEY (emp_ID) REFERENCES Employee(employee_ID)
     );
 
@@ -121,7 +121,7 @@ BEGIN
         date_of_original_workday DATE,
         emp_ID INT,
         replacement_emp INT,
-        FOREIGN KEY (request_ID) REFERENCES LeaveTable(request_ID),
+        FOREIGN KEY (request_ID) REFERENCES Leave(request_ID),
         FOREIGN KEY (emp_ID) REFERENCES Employee(employee_ID),
         FOREIGN KEY (replacement_emp) REFERENCES Employee(employee_ID)
     );
@@ -211,7 +211,7 @@ BEGIN
             CHECK (status IN ('approved', 'rejected', 'pending')),
         PRIMARY KEY (Emp1_ID, Leave_ID),
         FOREIGN KEY (Emp1_ID) REFERENCES Employee(employee_ID),
-        FOREIGN KEY (Leave_ID) REFERENCES LeaveTable(request_ID)
+        FOREIGN KEY (Leave_ID) REFERENCES Leave(request_ID)
     );
 END;
 GO
@@ -236,7 +236,7 @@ BEGIN
     DROP TABLE Unpaid_Leave;
     DROP TABLE Attendance;
     DROP TABLE Employee;
-    DROP TABLE LeaveTable;
+    DROP TABLE Leave;
     DROP TABLE Department;
     DROP TABLE Role;
 END;
@@ -261,7 +261,7 @@ BEGIN
     DELETE FROM Unpaid_Leave;
     DELETE FROM Attendance;
     DELETE FROM Employee;
-    DELETE FROM LeaveTable;
+    DELETE FROM Leave;
     DELETE FROM Department;
     DELETE FROM Role;
 END;
