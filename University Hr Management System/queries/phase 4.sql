@@ -313,11 +313,6 @@ BEGIN
     SET status = @ApprovalStatus 
     WHERE Leave_ID = @request_ID AND Emp1_ID = @Upperboard_ID;
 
-    IF EXISTS (SELECT 1 FROM Employee_Approve_Leave WHERE Leave_ID = @request_ID AND status = 'rejected')
-    BEGIN
-        UPDATE [Leave] SET final_approval_status = 'rejected' WHERE request_ID = @request_ID;
-        RETURN;
-    END
 END;
 GO
 
@@ -349,11 +344,6 @@ BEGIN
     SET status = @ApprovalStatus 
     WHERE Leave_ID = @request_ID AND Emp1_ID = @Upperboard_ID;
 
-    IF EXISTS (SELECT 1 FROM Employee_Approve_Leave WHERE Leave_ID = @request_ID AND status = 'rejected')
-    BEGIN
-        UPDATE [Leave] SET final_approval_status = 'rejected' WHERE request_ID = @request_ID;
-        RETURN;
-    END
 END;
 GO
 
