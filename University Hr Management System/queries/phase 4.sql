@@ -53,7 +53,6 @@ BEGIN
 
     IF @role IN ('Dean','Vice Dean') 
     BEGIN
-
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'President');
         INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 
@@ -62,7 +61,6 @@ BEGIN
     END
     ELSE
     BEGIN
-
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Dean');
         
         IF dbo.Is_On_Leave(@approver, @start_date, @end_date) = 1
@@ -96,7 +94,6 @@ BEGIN
     VALUES (@request_ID, @employee_ID);
 
     DECLARE @approver INT;
-    
     SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
     INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 END;
@@ -136,7 +133,6 @@ BEGIN
     END
 
     DECLARE @approver INT;
-    
     SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
     INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 END;
@@ -222,10 +218,9 @@ BEGIN
     END
     ELSE
     BEGIN
-
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Dean');
 
-        IF dbo.Is_On_Leave(@approver, @start_date, @end_date) = 1
+        IF  dbo.Is_On_Leave(@approver, @start_date, @end_date) = 1
         BEGIN
             SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Vice Dean');
         END
@@ -271,7 +266,6 @@ BEGIN
     VALUES (@request_ID, @reason, @date_of_original_workday, @employee_ID, @replacement_emp);
 
     DECLARE @approver INT;
-    
     SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
     INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 END;
@@ -294,7 +288,7 @@ BEGIN
     DECLARE @end DATE   = (SELECT end_date FROM [Leave] WHERE request_ID = @request_ID);
     DECLARE @emp_ID INT = (SELECT emp_ID FROM Annual_Leave WHERE request_ID = @request_ID);
     
-    DECLARE @ok BIT = 1;
+    DECLARE @ConstraintCheck BIT = 1;
     DECLARE @ApprovalStatus VARCHAR(50) = 'approved';
 
     IF NOT EXISTS (
@@ -302,15 +296,15 @@ BEGIN
         WHERE e1.employee_ID = @emp_ID AND e2.employee_ID = @replacement_ID
     )
     BEGIN
-        SET @ok = 0;
+        SET @ConstraintCheck = 0;
     END
 
     IF dbo.Is_On_Leave(@replacement_ID, @start, @end) = 1
     BEGIN
-        SET @ok = 0;
+        SET @ConstraintCheck = 0;
     END
 
-    IF @ok = 0
+    IF @ConstraintCheck = 0
     BEGIN
         SET @ApprovalStatus = 'rejected';
     END
@@ -319,19 +313,11 @@ BEGIN
     SET status = @ApprovalStatus 
     WHERE Leave_ID = @request_ID AND Emp1_ID = @Upperboard_ID;
 
-    
     IF EXISTS (SELECT 1 FROM Employee_Approve_Leave WHERE Leave_ID = @request_ID AND status = 'rejected')
     BEGIN
         UPDATE [Leave] SET final_approval_status = 'rejected' WHERE request_ID = @request_ID;
         RETURN;
     END
-
-    IF EXISTS (SELECT 1 FROM Employee_Approve_Leave WHERE Leave_ID = @request_ID AND status = 'pending')
-    BEGIN
-        RETURN;
-    END
-
-    UPDATE [Leave] SET final_approval_status = 'approved' WHERE request_ID = @request_ID;
 END;
 GO
 
@@ -368,10 +354,6 @@ BEGIN
         UPDATE [Leave] SET final_approval_status = 'rejected' WHERE request_ID = @request_ID;
         RETURN;
     END
-
-    IF EXISTS (SELECT 1 FROM Employee_Approve_Leave WHERE Leave_ID = @request_ID AND status = 'pending') RETURN;
-
-    UPDATE [Leave] SET final_approval_status = 'approved' WHERE request_ID = @request_ID;
 END;
 GO
 
