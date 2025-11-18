@@ -11,14 +11,6 @@ BEGIN
 
     IF EXISTS (SELECT 1 FROM Employee WHERE employee_ID = @employee_ID AND type_of_contract = 'part_time') RETURN;
 
-    INSERT INTO [Leave](date_of_request, start_date, end_date, final_approval_status)
-    VALUES (GETDATE(), @start_date, @end_date, 'pending');
-
-    DECLARE @request_ID INT = SCOPE_IDENTITY();
-
-    INSERT INTO Annual_Leave(request_ID, emp_ID, replacement_emp)
-    VALUES (@request_ID, @employee_ID, @replacement_emp);
-
     DECLARE @role VARCHAR(50), @dept VARCHAR(50), @approver INT;
     
     SELECT @dept = dept_name FROM Employee WHERE employee_ID = @employee_ID;
@@ -29,39 +21,59 @@ BEGIN
     WHERE er.emp_ID = @employee_ID
     ORDER BY r.rank ASC; 
 
-    IF @role IS NULL RETURN; 
+    IF @role = 'Dean'
+    BEGIN
+        DECLARE @vice_dean_id INT;
+        SELECT TOP 1 @vice_dean_id = e.employee_ID
+        FROM Employee e
+        INNER JOIN Employee_Role er ON e.employee_ID = er.emp_ID
+        WHERE e.dept_name = @dept AND er.role_name = 'Vice Dean';
+
+        IF dbo.Is_On_Leave(@vice_dean_id, @start_date, @end_date) = 1 RETURN;
+    END
+
+    IF @role = 'Vice Dean'
+    BEGIN
+        DECLARE @dean_id INT;
+        SELECT TOP 1 @dean_id = e.employee_ID
+        FROM Employee e
+        INNER JOIN Employee_Role er ON e.employee_ID = er.emp_ID
+        WHERE e.dept_name = @dept AND er.role_name = 'Dean';
+
+        IF dbo.Is_On_Leave(@dean_id, @start_date, @end_date) = 1 RETURN;
+    END
+
+    INSERT INTO [Leave](date_of_request, start_date, end_date, final_approval_status)
+    VALUES (GETDATE(), @start_date, @end_date, 'pending');
+
+    DECLARE @request_ID INT = SCOPE_IDENTITY();
+
+    INSERT INTO Annual_Leave(request_ID, emp_ID, replacement_emp)
+    VALUES (@request_ID, @employee_ID, @replacement_emp);
 
     IF @role IN ('Dean','Vice Dean') 
     BEGIN
+
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'President');
-        IF @approver IS NOT NULL
-            INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-        IF @approver IS NULL
-            SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-        IF @approver IS NOT NULL
-            INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
     END
     ELSE
     BEGIN
-        SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Dean');
-        IF @approver IS NULL
-            SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Vice Dean');
 
-        IF @approver IS NOT NULL AND dbo.Is_On_Leave(@approver, @start_date, @end_date) = 1
+        SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Dean');
+        
+        IF dbo.Is_On_Leave(@approver, @start_date, @end_date) = 1
         BEGIN
             SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Vice Dean');
         END
 
-        IF @approver IS NOT NULL
-            INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-        IF @approver IS NULL
-            SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-        IF @approver IS NOT NULL
-            INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
     END
 END;
 GO
@@ -84,12 +96,9 @@ BEGIN
     VALUES (@request_ID, @employee_ID);
 
     DECLARE @approver INT;
+    
     SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-    IF @approver IS NULL
-        SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-
-    IF @approver IS NOT NULL
-        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+    INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 END;
 GO
 
@@ -127,12 +136,9 @@ BEGIN
     END
 
     DECLARE @approver INT;
+    
     SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-    IF @approver IS NULL
-        SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-
-    IF @approver IS NOT NULL
-        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+    INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 END;
 GO
 
@@ -158,16 +164,6 @@ BEGIN
           AND YEAR(l.start_date) = YEAR(@start_date)
     ) RETURN;
 
-    INSERT INTO [Leave](date_of_request, start_date, end_date, final_approval_status)
-    VALUES (GETDATE(), @start_date, @end_date, 'pending');
-
-    DECLARE @request_ID INT = SCOPE_IDENTITY();
-
-    INSERT INTO Unpaid_Leave(request_ID, Emp_ID) VALUES(@request_ID, @employee_ID);
-
-    INSERT INTO Document([type], description, file_name, creation_date, expiry_date, status, emp_ID, medical_ID, unpaid_ID)
-    VALUES ('memo', @document_description, @file_name, GETDATE(), NULL, 'valid', @employee_ID, NULL, @request_ID);
-
     DECLARE @role VARCHAR(50), @dept VARCHAR(50), @approver INT;
     
     SELECT @dept = dept_name FROM Employee WHERE employee_ID = @employee_ID;
@@ -178,51 +174,66 @@ BEGIN
     WHERE er.emp_ID = @employee_ID
     ORDER BY r.rank ASC;
 
-    IF @role IS NULL RETURN;
+    IF @role = 'Dean'
+    BEGIN
+        DECLARE @vice_dean_id INT;
+        SELECT TOP 1 @vice_dean_id = e.employee_ID
+        FROM Employee e
+        INNER JOIN Employee_Role er ON e.employee_ID = er.emp_ID
+        WHERE e.dept_name = @dept AND er.role_name = 'Vice Dean';
+        IF dbo.Is_On_Leave(@vice_dean_id, @start_date, @end_date) = 1 RETURN;
+    END
+
+    IF @role = 'Vice Dean'
+    BEGIN
+        DECLARE @dean_id INT;
+        SELECT TOP 1 @dean_id = e.employee_ID
+        FROM Employee e
+        INNER JOIN Employee_Role er ON e.employee_ID = er.emp_ID
+        WHERE e.dept_name = @dept AND er.role_name = 'Dean';
+        IF dbo.Is_On_Leave(@dean_id, @start_date, @end_date) = 1 RETURN;
+    END
+
+    INSERT INTO [Leave](date_of_request, start_date, end_date, final_approval_status)
+    VALUES (GETDATE(), @start_date, @end_date, 'pending');
+
+    DECLARE @request_ID INT = SCOPE_IDENTITY();
+
+    INSERT INTO Unpaid_Leave(request_ID, Emp_ID) VALUES(@request_ID, @employee_ID);
+
+    INSERT INTO Document([type], description, file_name, creation_date, expiry_date, status, emp_ID, medical_ID, unpaid_ID)
+    VALUES ('memo', @document_description, @file_name, GETDATE(), NULL, 'valid', @employee_ID, NULL, @request_ID);
 
     IF @role IN ('Dean','Vice Dean')
     BEGIN
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'President');
-        IF @approver IS NOT NULL
-            INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-        IF @approver IS NULL
-            SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-        IF @approver IS NOT NULL
-            INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
     END
     ELSE IF @role LIKE 'HR%' 
     BEGIN
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'President');
-        IF @approver IS NOT NULL
-            INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Manager');
-        IF @approver IS NULL
-            SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Manager');
-        IF @approver IS NOT NULL
-            INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
     END
     ELSE
     BEGIN
-        SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Dean');
-        IF @approver IS NULL
-            SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Vice Dean');
 
-        IF @approver IS NOT NULL AND dbo.Is_On_Leave(@approver, @start_date, @end_date) = 1
+        SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Dean');
+
+        IF dbo.Is_On_Leave(@approver, @start_date, @end_date) = 1
         BEGIN
             SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = @dept AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'Vice Dean');
         END
 
-        IF @approver IS NOT NULL
-            INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 
         SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-        IF @approver IS NULL
-            SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-        IF @approver IS NOT NULL
-            INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
     END
 END;
 GO
@@ -260,11 +271,9 @@ BEGIN
     VALUES (@request_ID, @reason, @date_of_original_workday, @employee_ID, @replacement_emp);
 
     DECLARE @approver INT;
+    
     SELECT TOP 1 @approver = employee_ID FROM Employee WHERE dept_name = 'HR' AND employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-    IF @approver IS NULL
-        SELECT TOP 1 @approver = employee_ID FROM Employee WHERE employee_ID IN (SELECT emp_ID FROM Employee_Role WHERE role_name = 'HR Representative');
-    IF @approver IS NOT NULL
-        INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
+    INSERT INTO Employee_Approve_Leave(Emp1_ID, Leave_ID, status) VALUES(@approver, @request_ID, 'pending');
 END;
 GO
 
@@ -285,7 +294,7 @@ BEGIN
     DECLARE @end DATE   = (SELECT end_date FROM [Leave] WHERE request_ID = @request_ID);
     DECLARE @emp_ID INT = (SELECT emp_ID FROM Annual_Leave WHERE request_ID = @request_ID);
     
-    DECLARE @ok BIT = 1;
+    DECLARE @ConstraintCheck BIT = 1;
     DECLARE @ApprovalStatus VARCHAR(50) = 'approved';
 
     IF NOT EXISTS (
@@ -293,15 +302,15 @@ BEGIN
         WHERE e1.employee_ID = @emp_ID AND e2.employee_ID = @replacement_ID
     )
     BEGIN
-        SET @ok = 0;
+        SET @ConstraintCheck = 0;
     END
 
     IF dbo.Is_On_Leave(@replacement_ID, @start, @end) = 1
     BEGIN
-        SET @ok = 0;
+        SET @ConstraintCheck = 0;
     END
 
-    IF @ok = 0
+    IF @ConstraintCheck = 0
     BEGIN
         SET @ApprovalStatus = 'rejected';
     END
