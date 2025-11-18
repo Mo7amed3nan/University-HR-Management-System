@@ -47,7 +47,7 @@ BEGIN
             AND (L.final_approval_status = 'approved' OR L.final_approval_status = 'pending')
             
             -- This is the overlap logic:
-            AND (L.start_date <= @to AND L.end_date >= @from)
+            AND (L.start_date <= @to_date AND L.end_date >= @from_date)
     )
     BEGIN
         SET @on_leave = 1;
