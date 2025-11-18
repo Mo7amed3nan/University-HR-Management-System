@@ -294,7 +294,7 @@ BEGIN
     DECLARE @end DATE   = (SELECT end_date FROM [Leave] WHERE request_ID = @request_ID);
     DECLARE @emp_ID INT = (SELECT emp_ID FROM Annual_Leave WHERE request_ID = @request_ID);
     
-    DECLARE @ConstraintCheck BIT = 1;
+    DECLARE @ok BIT = 1;
     DECLARE @ApprovalStatus VARCHAR(50) = 'approved';
 
     IF NOT EXISTS (
@@ -302,15 +302,15 @@ BEGIN
         WHERE e1.employee_ID = @emp_ID AND e2.employee_ID = @replacement_ID
     )
     BEGIN
-        SET @ConstraintCheck = 0;
+        SET @ok = 0;
     END
 
     IF dbo.Is_On_Leave(@replacement_ID, @start, @end) = 1
     BEGIN
-        SET @ConstraintCheck = 0;
+        SET @ok = 0;
     END
 
-    IF @ConstraintCheck = 0
+    IF @ok = 0
     BEGIN
         SET @ApprovalStatus = 'rejected';
     END
