@@ -1,0 +1,10 @@
+C:\Users\YOUSSEF\Desktop\Sem_5\Databases\Project_Sem\Milestone2\University Hr Management System\bin\Debug\University Hr Management System.dacpac
+C:\Users\YOUSSEF\Desktop\Sem_5\Databases\Project_Sem\Milestone2\University Hr Management System\bin\Debug\University_Hr_Management_System.dll
+C:\Users\YOUSSEF\Desktop\Sem_5\Databases\Project_Sem\Milestone2\University Hr Management System\bin\Debug\University_Hr_Management_System.pdb
+C:\Users\YOUSSEF\Desktop\Sem_5\Databases\Project_Sem\Milestone2\University Hr Management System\obj\Debug\University Hr Management System.sqlproj.AssemblyReference.cache
+C:\Users\YOUSSEF\Desktop\Sem_5\Databases\Project_Sem\Milestone2\University Hr Management System\obj\Debug\Model.xml
+C:\Users\YOUSSEF\Desktop\Sem_5\Databases\Project_Sem\Milestone2\University Hr Management System\obj\Debug\refactor.xml
+C:\Users\YOUSSEF\Desktop\Sem_5\Databases\Project_Sem\Milestone2\University Hr Management System\obj\Debug\postdeploy.sql
+C:\Users\YOUSSEF\Desktop\Sem_5\Databases\Project_Sem\Milestone2\University Hr Management System\obj\Debug\predeploy.sql
+C:\Users\YOUSSEF\Desktop\Sem_5\Databases\Project_Sem\Milestone2\University Hr Management System\obj\Debug\University_Hr_Management_System.dll
+C:\Users\YOUSSEF\Desktop\Sem_5\Databases\Project_Sem\Milestone2\University Hr Management System\obj\Debug\University_Hr_Management_System.pdb
