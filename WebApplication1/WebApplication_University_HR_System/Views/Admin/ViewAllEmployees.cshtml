@@ -1,0 +1,45 @@
+﻿@model List<WebApplication_University_HR_System.Models.AllEmployeeProfile>
+
+<div class="container mt-5">
+    <h2 class="mb-4">All Employee Profiles</h2>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+                <th>Contract</th>
+                <th>Day Off</th>
+                <th>Annual Bal.</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in Model)
+            {
+                <tr>
+                    <td>@emp.EmployeeId</td>
+                    <td>@emp.FirstName @emp.LastName</td>
+                    <td>@emp.Email</td>
+                    <td>
+                        @if (emp.EmploymentStatus == "active")
+                        {
+                            <span class="badge bg-success">Active</span>
+                        }
+                        else
+                        {
+
+                            <span class="badge bg-danger">@emp.EmploymentStatus</span>
+                        }
+                    </td>
+                    <td>@emp.TypeOfContract</td>
+                    <td>@emp.OfficialDayOff</td>
+                    <td>@emp.AnnualBalance</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Admin/Index" class="btn btn-secondary mt-3">Back to Dashboard</a>
+</div>

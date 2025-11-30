@@ -1,0 +1,391 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\models\\allrejectedmedical.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\models\\allrejectedmedical.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\models\\annualleave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\models\\annualleave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\views\\admin\\viewdepartmentstats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\views\\admin\\viewdepartmentstats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\views\\admin\\viewallemployees.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\views\\admin\\viewallemployees.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\views\\admin\\viewrejectedmedicalleaves.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\views\\admin\\viewrejectedmedicalleaves.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\views\\admin\\addholiday.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\views\\admin\\addholiday.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\views\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\views\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\models\\noemployeedept.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\models\\noemployeedept.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\models\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\models\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\models\\payroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\models\\payroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\models\\unpaidleave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\models\\unpaidleave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\models\\allemployeeattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\models\\allemployeeattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|d:\\guc\\semester 5\\data base i\\project\\webapplication1\\webapplication_university_hr_system\\controllers\\academiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F84EF6E0-855F-403A-8816-38CC35DFA217}|WebApplication_University_HR_System\\WebApplication_University_HR_System.csproj|solutionrelative:webapplication_university_hr_system\\controllers\\academiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 255,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AnnualLeave.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\AnnualLeave.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Models\\AnnualLeave.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\AnnualLeave.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Models\\AnnualLeave.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T20:00:31.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NoEmployeeDept.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\NoEmployeeDept.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Models\\NoEmployeeDept.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\NoEmployeeDept.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Models\\NoEmployeeDept.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:31:22.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DB.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\DB.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Models\\DB.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\DB.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Models\\DB.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T19:15:01.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Attendance.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\Attendance.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Models\\Attendance.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\Attendance.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Models\\Attendance.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA9wBUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T18:49:03.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AllRejectedMedical.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\AllRejectedMedical.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Models\\AllRejectedMedical.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\AllRejectedMedical.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Models\\AllRejectedMedical.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T18:44:09.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AllEmployeeAttendance.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\AllEmployeeAttendance.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Models\\AllEmployeeAttendance.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\AllEmployeeAttendance.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Models\\AllEmployeeAttendance.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T18:44:05.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UnpaidLeave.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\UnpaidLeave.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Models\\UnpaidLeave.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\UnpaidLeave.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Models\\UnpaidLeave.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T18:44:03.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Payroll.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\Payroll.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Models\\Payroll.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Models\\Payroll.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Models\\Payroll.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T18:44:02.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T18:40:51.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T18:40:45.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AcademicController.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Controllers\\AcademicController.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Controllers\\AcademicController.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Controllers\\AcademicController.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Controllers\\AcademicController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T18:39:08.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ViewDepartmentStats.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\ViewDepartmentStats.cshtml",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Views\\Admin\\ViewDepartmentStats.cshtml",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\ViewDepartmentStats.cshtml",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Views\\Admin\\ViewDepartmentStats.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T23:06:56.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\appsettings.json",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\appsettings.json",
+              "RelativeToolTip": "WebApplication_University_HR_System\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-28T20:41:38.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwB0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T20:19:30.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AddHoliday.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\AddHoliday.cshtml",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Views\\Admin\\AddHoliday.cshtml",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\AddHoliday.cshtml",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Views\\Admin\\AddHoliday.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T20:05:20.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ViewAllEmployees.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\ViewAllEmployees.cshtml",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Views\\Admin\\ViewAllEmployees.cshtml",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\ViewAllEmployees.cshtml",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Views\\Admin\\ViewAllEmployees.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T19:53:39.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T19:53:28.646Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Views\\Admin\\Login.cshtml",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\Login.cshtml",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Views\\Admin\\Login.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAABoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-28T19:52:52.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Controllers\\AdminController.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAiwJAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T19:26:11.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ViewRejectedMedicalLeaves.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\ViewRejectedMedicalLeaves.cshtml",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Views\\Admin\\ViewRejectedMedicalLeaves.cshtml",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Views\\Admin\\ViewRejectedMedicalLeaves.cshtml",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Views\\Admin\\ViewRejectedMedicalLeaves.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T19:29:19.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication_University_HR_System\\Program.cs",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\WebApplication1\\WebApplication_University_HR_System\\Program.cs",
+              "RelativeToolTip": "WebApplication_University_HR_System\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-28T19:26:10.526Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 43,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

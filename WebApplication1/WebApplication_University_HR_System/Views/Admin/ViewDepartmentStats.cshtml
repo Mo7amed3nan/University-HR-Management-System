@@ -1,0 +1,25 @@
+﻿@model List<WebApplication_University_HR_System.Models.NoEmployeeDept>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Employees per Department</h2>
+
+    <table class="table table-bordered table-hover" style="max-width: 600px;">
+        <thead class="table-dark">
+            <tr>
+                <th>Department Name</th>
+                <th>Number of Employees</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Department</td>
+                    <td class="text-center">@item.NumberOfEmployees</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="/Admin/Index" class="btn btn-secondary mt-3">Back to Dashboard</a>
+</div>

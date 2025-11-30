@@ -1,0 +1,59 @@
+﻿@model List<WebApplication_University_HR_System.Models.AllRejectedMedical>
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-danger">Rejected Medical Leaves</h2>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">
+            No rejected medical leaves found.
+        </div>
+    }
+    else
+    {
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Req ID</th>
+                    <th>Emp ID</th>
+                    <th>Leave Type</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Days</th>
+                    <th>Insurance</th>
+                    <th>Disability Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.request_ID</td>
+                        <td>@item.emp_ID</td>
+                        <td>
+                            <span class="badge bg-primary">@item.type</span>
+                        </td>
+                        <td>@item.start_date.ToShortDateString()</td>
+                        <td>@item.end_date.ToShortDateString()</td>
+                        <td>@item.num_days</td>
+                        <td>
+                            @if (item.insurance_status == true)
+                            {
+                                <span class="text-success fw-bold">Covered</span>
+                            }
+                            else
+                            {
+                                <span class="text-secondary">Not Covered</span>
+                            }
+                        </td>
+                        <td>@item.disability_details</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    <div class="mt-3">
+        <a href="/Admin/Index" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+</div>
