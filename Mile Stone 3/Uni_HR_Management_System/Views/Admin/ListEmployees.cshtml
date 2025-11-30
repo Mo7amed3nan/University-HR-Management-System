@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Uni_HR_Management_System.Models.AllEmployeeProfile>
+
+<h2>All Employee Profiles</h2>
+<a href="/Admin/Index">Back to Dashboard</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Type</th>
+            <th>Annual Bal</th>
+            <th>Accidental Bal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EmployeeId</td>
+                <td>@item.FirstName @item.LastName</td>
+                <td>@item.Email</td>
+                <td>@item.EmploymentStatus</td>
+                <td>@item.TypeOfContract</td>
+                <td>@item.AnnualBalance</td>
+                <td>@item.AccidentalBalance</td>
+            </tr>
+        }
+    </tbody>
+</table>

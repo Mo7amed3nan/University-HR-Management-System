@@ -1,0 +1,296 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\views\\admin\\addholiday.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\addholiday.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\models\\allemployeeattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\models\\allemployeeattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\views\\admin\\updateattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\updateattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\views\\admin\\rejectedleaves.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\rejectedleaves.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\models\\allrejectedmedical.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\models\\allrejectedmedical.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\views\\admin\\departmentstats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\departmentstats.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\views\\admin\\listemployees.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\listemployees.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\models\\universityhrmanagementsystemcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\models\\universityhrmanagementsystemcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\db\\uni_project\\uni_hr_management_system\\uni_hr_management_system\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 656,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Program.cs",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Program.cs",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Program.cs",
+              "RelativeToolTip": "Uni_HR_Management_System\\Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwB0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T00:00:11.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AllEmployeeAttendance.cs",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Models\\AllEmployeeAttendance.cs",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Models\\AllEmployeeAttendance.cs",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Models\\AllEmployeeAttendance.cs",
+              "RelativeToolTip": "Uni_HR_Management_System\\Models\\AllEmployeeAttendance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T23:57:50.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AllRejectedMedical.cs",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Models\\AllRejectedMedical.cs",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Models\\AllRejectedMedical.cs",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Models\\AllRejectedMedical.cs",
+              "RelativeToolTip": "Uni_HR_Management_System\\Models\\AllRejectedMedical.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T23:44:26.534Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RejectedLeaves.cshtml",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\RejectedLeaves.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\RejectedLeaves.cshtml",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\RejectedLeaves.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Admin\\RejectedLeaves.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T23:36:02.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DepartmentStats.cshtml",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\DepartmentStats.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\DepartmentStats.cshtml",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\DepartmentStats.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Admin\\DepartmentStats.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T23:35:44.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ListEmployees.cshtml",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\ListEmployees.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\ListEmployees.cshtml",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\ListEmployees.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Admin\\ListEmployees.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T23:35:20.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UpdateAttendance.cshtml",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\UpdateAttendance.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\UpdateAttendance.cshtml",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\UpdateAttendance.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Admin\\UpdateAttendance.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T23:32:59.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddHoliday.cshtml",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\AddHoliday.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\AddHoliday.cshtml",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\AddHoliday.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Admin\\AddHoliday.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T23:32:45.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T22:40:24.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Uni_HR_Management_System\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAYwIUAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T22:37:29.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T21:47:06.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T21:39:46.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UniversityHrManagementSystemContext.cs",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Models\\UniversityHrManagementSystemContext.cs",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Models\\UniversityHrManagementSystemContext.cs",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Models\\UniversityHrManagementSystemContext.cs",
+              "RelativeToolTip": "Uni_HR_Management_System\\Models\\UniversityHrManagementSystemContext.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAA3wDMAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T21:23:47.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Uni_HR_Management_System\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAYwDcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T21:14:48.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-29T20:48:43.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\DB\\Uni_project\\Uni_HR_Management_System\\Uni_HR_Management_System\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Uni_HR_Management_System\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-29T20:48:38.322Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

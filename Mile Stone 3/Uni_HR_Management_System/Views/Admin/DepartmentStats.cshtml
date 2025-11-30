@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Uni_HR_Management_System.Models.NoEmployeeDept>
+
+<h2>Department Statistics</h2>
+<a href="/Admin/Index">Back to Dashboard</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Department Name</th>
+            <th>Number of Employees</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Department</td>
+                <td>@item.NumberOfEmployees</td>
+            </tr>
+        }
+    </tbody>
+</table>

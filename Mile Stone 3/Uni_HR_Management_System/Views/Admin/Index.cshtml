@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<h1>Admin Dashboard</h1>
+
+@if (TempData["Message"] != null)
+{
+    <p style="color: green; font-weight: bold;">@TempData["Message"]</p>
+}
+
+<hr />
+
+<h3>Reports</h3>
+<ul>
+    <li><a href="/Admin/ListEmployees">View All Employees</a></li>
+    <li><a href="/Admin/DepartmentStats">View Department Statistics</a></li>
+    <li><a href="/Admin/RejectedLeaves">View Rejected Medical Leaves</a></li>
+</ul>
+
+<hr />
+
+<h3>Actions</h3>
+
+<p>
+    <a href="/Admin/AddHoliday">Add New Holiday</a>
+</p>
+
+<p>
+    <a href="/Admin/UpdateAttendance">Update Attendance Record</a>
+</p>
+
+<!-- POST Actions -->
+<form action="/Admin/StartDay" method="post">
+    <button type="submit">Start Day (Initiate Attendance)</button>
+</form>
+<br />
+
+<form action="/Admin/ClearResignedDeductions" method="post">
+    <button type="submit">Clear Resigned Deductions</button>
+</form>
+
+<hr />
+<a href="/Account/Logout">Logout</a>

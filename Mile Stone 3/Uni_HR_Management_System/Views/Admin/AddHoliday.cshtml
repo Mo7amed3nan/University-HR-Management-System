@@ -1,0 +1,19 @@
+﻿<h2>Add New Holiday</h2>
+<a href="/Admin/Index">Back to Dashboard</a>
+
+<form action="/Admin/AddHoliday" method="post">
+
+    <label>Holiday Name:</label>
+    <input type="text" name="name" required />
+    <br /><br />
+
+    <label>Start Date:</label>
+    <input type="date" name="start" required />
+    <br /><br />
+
+    <label>End Date:</label>
+    <input type="date" name="end" required />
+    <br /><br />
+
+    <button type="submit">Save Holiday</button>
+</form>

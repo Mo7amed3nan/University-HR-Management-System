@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Uni_HR_Management_System.Models.AllRejectedMedical>
+
+<h2>Rejected Medical Leaves</h2>
+<a href="/Admin/Index">Back to Dashboard</a>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Request ID</th>
+            <th>Employee ID</th>
+            <th>Dates</th>
+            <th>Disability Details</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RequestId</td>
+                <td>@item.EmpId</td>
+                <td>@item.DisabilityDetails</td>
+            </tr>
+        }
+    </tbody>
+</table>
