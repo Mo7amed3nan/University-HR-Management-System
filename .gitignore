@@ -1,0 +1,21 @@
+# Visual Studio cache
+.vs/
+
+# Build outputs
+bin/
+obj/
+
+# User-specific settings
+*.user
+*.userosscache
+*.suo
+
+# Rider / IntelliJ
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
