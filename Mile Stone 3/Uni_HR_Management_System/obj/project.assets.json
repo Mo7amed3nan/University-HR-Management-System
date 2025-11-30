@@ -4695,23 +4695,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mohamed_3nan\\.nuget\\packages\\": {},
+    "C:\\Users\\Ziad Abdou\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DB\\Uni_project\\University Hr Management System\\Mile Stone 3\\Uni_HR_Management_System\\Uni_HR_Management_System.csproj",
+      "projectUniqueName": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Uni_HR_Management_System.csproj",
       "projectName": "Uni_HR_Management_System",
-      "projectPath": "C:\\DB\\Uni_project\\University Hr Management System\\Mile Stone 3\\Uni_HR_Management_System\\Uni_HR_Management_System.csproj",
-      "packagesPath": "C:\\Users\\Mohamed_3nan\\.nuget\\packages\\",
-      "outputPath": "C:\\DB\\Uni_project\\University Hr Management System\\Mile Stone 3\\Uni_HR_Management_System\\obj\\",
+      "projectPath": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Uni_HR_Management_System.csproj",
+      "packagesPath": "C:\\Users\\Ziad Abdou\\.nuget\\packages\\",
+      "outputPath": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Mohamed_3nan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ziad Abdou\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4780,7 +4780,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

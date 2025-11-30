@@ -23,7 +23,7 @@ namespace Uni_HR_Management_System.Controllers
     {
       if (userName == "admin@guc.edu.eg" && password == "admin123")
       {
-        //HttpContext.Session.SetString("Role", "Admin");
+        HttpContext.Session.SetString("Role", "Admin");
         return RedirectToAction("Index", "Admin");
       }
 

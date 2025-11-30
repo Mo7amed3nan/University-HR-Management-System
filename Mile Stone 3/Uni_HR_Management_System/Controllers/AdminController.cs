@@ -1,10 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Uni_HR_Management_System.Models;
+using Uni_HR_Management_System.Filters;
+
 
 namespace Uni_HR_Management_System.Controllers
 {
-  public class AdminController : Controller
+
+    [AdminAuth]
+    public class AdminController : Controller
   {
 
     private readonly UniversityHrManagementSystemContext _context;
@@ -31,7 +35,7 @@ namespace Uni_HR_Management_System.Controllers
     // -------------------------------------------------------------
     public async Task<IActionResult> ListEmployees()
     {
-      //if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
+            if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
 
       var profiles = await _context.AllEmployeeProfiles
           .FromSqlRaw("SELECT * FROM allEmployeeProfiles")
@@ -45,7 +49,6 @@ namespace Uni_HR_Management_System.Controllers
     // -------------------------------------------------------------
     public async Task<IActionResult> DepartmentStats()
     {
-      //if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
 
       var stats = await _context.NoEmployeeDepts
           .FromSqlRaw("SELECT * FROM NoEmployeeDept")
@@ -59,7 +62,6 @@ namespace Uni_HR_Management_System.Controllers
     // -------------------------------------------------------------
     public async Task<IActionResult> RejectedLeaves()
     {
-      //if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
 
       var leaves = await _context.AllRejectedMedicals
           .FromSqlRaw("SELECT * FROM allRejectedMedicals")
@@ -74,7 +76,6 @@ namespace Uni_HR_Management_System.Controllers
     [HttpPost]
     public async Task<IActionResult> ClearResignedDeductions()
     {
-      //if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
 
       await _context.Database.ExecuteSqlRawAsync("EXEC Remove_Deductions");
 
@@ -88,14 +89,12 @@ namespace Uni_HR_Management_System.Controllers
     [HttpGet]
     public IActionResult UpdateAttendance()
     {
-      //if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
       return View();
     }
 
     [HttpPost]
     public async Task<IActionResult> UpdateAttendance(int empId, DateTime date, TimeSpan inTime, TimeSpan outTime)
     {
-      //if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
       string sql = "EXEC Update_Attendance @Employee_id={0}, @check_in_time={1}, @check_out_time={2}";
       await _context.Database.ExecuteSqlRawAsync(sql, empId, inTime, outTime);
 
@@ -109,14 +108,12 @@ namespace Uni_HR_Management_System.Controllers
     [HttpGet]
     public IActionResult AddHoliday()
     {
-      //if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
       return View();
     }
 
     [HttpPost]
     public async Task<IActionResult> AddHoliday(string name, DateTime start, DateTime end)
     {
-      //if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
 
       string sql = "EXEC Add_Holiday @holiday_name={0}, @from_date={1}, @to_date={2}";
       await _context.Database.ExecuteSqlRawAsync(sql, name, start, end);
@@ -131,7 +128,6 @@ namespace Uni_HR_Management_System.Controllers
     [HttpPost]
     public async Task<IActionResult> StartDay()
     {
-      //if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
 
       await _context.Database.ExecuteSqlRawAsync("EXEC Initiate_Attendance");
 
