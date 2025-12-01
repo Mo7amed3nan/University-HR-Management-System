@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Uni_HR_Management_System.Models.Attendance>
+
+<h2>My Attendance (Current Month)</h2>
+<a href="/Employee/Index">Back</a>
+
+<table border="1">
+    <thead><tr><th>Date</th><th>Check In</th><th>Check Out</th><th>Status</th></tr></thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Date</td>
+                <td>@item.CheckInTime</td>
+                <td>@item.CheckOutTime</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Uni_HR_Management_System.Models.Deduction>
+
+<h2>My Deductions</h2>
+<a href="/Employee/Index">Back</a>
+
+<form action="/Employee/ViewDeductions" method="post">
+    <label>Enter Month (1-12):</label>
+    <input type="number" name="month" required min="1" max="12" />
+    <button type="submit">Search</button>
+</form>
+<br />
+
+<table border="1">
+    <thead><tr><th>Date</th><th>Amount</th><th>Type</th><th>Status</th></tr></thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Date</td>
+                <td>@item.Amount</td>
+                <td>@item.Type</td>   
+                <td>@item.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>

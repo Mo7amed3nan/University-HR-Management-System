@@ -1593,7 +1593,7 @@ CREATE or alter FUNCTION status_leaves
 RETURNS TABLE
 AS
 RETURN (
-SELECT L.request_ID,  L.date_of_request,L.final_approval_status
+SELECT L.*
 FROM Leave L 
 left outer JOIN Annual_Leave An
 ON  L.request_ID=An.request_ID 
@@ -1601,7 +1601,7 @@ where  An.emp_ID=@employee_ID	and MONTH(CURRENT_TIMESTAMP) = MONTH(L.date_of_req
 and YEAR(CURRENT_TIMESTAMP) = YEAR(L.date_of_request)
 
 Union
-SELECT L.request_ID,  L.date_of_request,L.final_approval_status
+SELECT L.*
 FROM Leave L 
 left outer JOIN Accidental_Leave Ac
 ON  L.request_ID=Ac.request_ID 
@@ -2171,3 +2171,5 @@ AS
 
 
 GO
+
+

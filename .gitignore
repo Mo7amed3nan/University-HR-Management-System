@@ -1,21 +1,7 @@
-# Visual Studio cache
 .vs/
 
-# Build outputs
-bin/
-obj/
+# MileStone 3
 
-# User-specific settings
-*.user
-*.userosscache
-*.suo
+Mile Stone 3/Uni_HR_Management_System/bin/
+Mile Stone 3/Uni_HR_Management_System/obj/
 
-# Rider / IntelliJ
-.idea/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
-*.log

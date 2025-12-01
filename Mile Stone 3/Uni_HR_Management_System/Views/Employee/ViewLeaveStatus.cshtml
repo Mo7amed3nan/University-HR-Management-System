@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Uni_HR_Management_System.Models.Leave>
+
+<h2>My Leave Status</h2>
+<a href="/Employee/Index">Back</a>
+
+<table border="1">
+    <thead><tr><th>Request ID</th><th>Date of Request</th><th>Status</th></tr></thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RequestId</td>
+                <td>@item.DateOfRequest</td>
+                <td>@item.FinalApprovalStatus</td>
+            </tr>
+        }
+    </tbody>
+</table>

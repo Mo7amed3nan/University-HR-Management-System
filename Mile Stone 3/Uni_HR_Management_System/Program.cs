@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Uni_HR_Management_System.Models;
 
@@ -9,9 +8,9 @@ builder.Services.AddControllersWithViews();
 // 1. ADD THIS: Register Session Service
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30); 
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
+  options.IdleTimeout = TimeSpan.FromMinutes(30);
+  options.Cookie.HttpOnly = true;
+  options.Cookie.IsEssential = true;
 });
 
 builder.Services.AddDbContext<UniversityHrManagementSystemContext>(options =>
@@ -22,8 +21,8 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
+  app.UseExceptionHandler("/Home/Error");
+  app.UseHsts();
 }
 
 app.UseHttpsRedirection();

@@ -1,0 +1,17 @@
+﻿<h2>Last Month Payroll</h2>
+<a href="/Employee/Index">Back</a>
+
+<table border="1">
+    <thead><tr><th>Amount</th><th>Bonus</th><th>Deductions</th><th>Payment Date</th></tr></thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FinalSalaryAmount</td>
+                <td>@item.BonusAmount</td>
+                <td>@item.DeductionsAmount</td>
+                <td>@item.PaymentDate</td>
+            </tr>
+        }
+    </tbody>
+</table>

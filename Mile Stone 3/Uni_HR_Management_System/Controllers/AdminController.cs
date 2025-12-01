@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Uni_HR_Management_System.Models;
 using Uni_HR_Management_System.Filters;
+using Uni_HR_Management_System.Models;
 
 
 namespace Uni_HR_Management_System.Controllers
 {
 
-    [AdminAuth]
-    public class AdminController : Controller
+  [AdminAuth]
+  public class AdminController : Controller
   {
 
     private readonly UniversityHrManagementSystemContext _context;
@@ -22,11 +22,8 @@ namespace Uni_HR_Management_System.Controllers
     // -------------------------------------------------------------
     // REQUIREMENT 1: Login (Handled in AccountController)
     // -------------------------------------------------------------
-
-    // Dashboard (Index)
     public IActionResult Index()
     {
-      //if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
       return View();
     }
 
@@ -35,8 +32,6 @@ namespace Uni_HR_Management_System.Controllers
     // -------------------------------------------------------------
     public async Task<IActionResult> ListEmployees()
     {
-            if (HttpContext.Session.GetString("Role") != "Admin") return RedirectToAction("Login", "Account");
-
       var profiles = await _context.AllEmployeeProfiles
           .FromSqlRaw("SELECT * FROM allEmployeeProfiles")
           .ToListAsync();
@@ -49,7 +44,6 @@ namespace Uni_HR_Management_System.Controllers
     // -------------------------------------------------------------
     public async Task<IActionResult> DepartmentStats()
     {
-
       var stats = await _context.NoEmployeeDepts
           .FromSqlRaw("SELECT * FROM NoEmployeeDept")
           .ToListAsync();
@@ -62,7 +56,6 @@ namespace Uni_HR_Management_System.Controllers
     // -------------------------------------------------------------
     public async Task<IActionResult> RejectedLeaves()
     {
-
       var leaves = await _context.AllRejectedMedicals
           .FromSqlRaw("SELECT * FROM allRejectedMedicals")
           .ToListAsync();
@@ -76,7 +69,6 @@ namespace Uni_HR_Management_System.Controllers
     [HttpPost]
     public async Task<IActionResult> ClearResignedDeductions()
     {
-
       await _context.Database.ExecuteSqlRawAsync("EXEC Remove_Deductions");
 
       TempData["Message"] = "Deductions for resigned employees have been cleared.";
@@ -114,7 +106,6 @@ namespace Uni_HR_Management_System.Controllers
     [HttpPost]
     public async Task<IActionResult> AddHoliday(string name, DateTime start, DateTime end)
     {
-
       string sql = "EXEC Add_Holiday @holiday_name={0}, @from_date={1}, @to_date={2}";
       await _context.Database.ExecuteSqlRawAsync(sql, name, start, end);
 
@@ -128,7 +119,6 @@ namespace Uni_HR_Management_System.Controllers
     [HttpPost]
     public async Task<IActionResult> StartDay()
     {
-
       await _context.Database.ExecuteSqlRawAsync("EXEC Initiate_Attendance");
 
       TempData["Message"] = "Attendance records initiated for today.";

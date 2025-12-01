@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Employee Dashboard";
+}
+
+<h1>Academic Employee Dashboard</h1>
+<hr />
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<h3>My Information</h3>
+<ul>
+    <li><a href="/Employee/ViewAttendance">View My Attendance</a></li>
+    <li><a href="/Employee/ViewPayroll">View Last Month Payroll</a></li>
+    <li><a href="/Employee/ViewPerformance">View My Performance</a></li>
+    <li><a href="/Employee/ViewDeductions">View Deductions</a></li>
+</ul>
+      
+<h3>Leave Management</h3>
+<ul>
+    <li><a href="/Employee/SubmitAnnualLeave">Apply for Annual Leave</a></li>
+    <li><a href="/Employee/ViewLeaveStatus">View Leave Status</a></li>
+</ul>
+
+<hr />
+<a href="/Account/Logout">Logout</a>

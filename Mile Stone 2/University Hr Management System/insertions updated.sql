@@ -1,5 +1,6 @@
 ﻿USE University_HR_ManagementSystem;
 go
+
 ------
 insert into Department (name,building_location)
 values ('MET','C building')
@@ -612,3 +613,7 @@ values (5,19,'pending')
 insert into Employee_Approve_Leave (Emp1_ID,leave_ID,status)
 values (5,20,'pending')
 ------------------------------------------------------
+select * from Attendance
+where emp_ID = 1
+
+select * from dbo.MyAttendance(6)
