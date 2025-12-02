@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\admin\\listemployees.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\listemployees.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\admin\\updateattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\updateattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\admin\\viewperformance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\viewperformance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\admin\\viewattendanceyesterday.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -33,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\admin\\removedayoff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\admin\\removedayoff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -124,11 +128,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 271,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 27,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\Index.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Employee\\Index.cshtml",
@@ -141,7 +145,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "EmployeeController.cs",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Controllers\\EmployeeController.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Controllers\\EmployeeController.cs",
@@ -156,19 +160,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ListEmployees.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\ListEmployees.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\ListEmployees.cshtml",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\ListEmployees.cshtml*",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Admin\\ListEmployees.cshtml*",
+              "ViewState": "AgIAACoAAAAAAAAAAAAiwDkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T11:53:11.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\Index.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\Index.cshtml",
               "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\Index.cshtml",
               "RelativeToolTip": "Uni_HR_Management_System\\Views\\Admin\\Index.cshtml",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAiwGkAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAiwEUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-02T11:07:29.791Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ViewAttendanceYesterday.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\ViewAttendanceYesterday.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\ViewAttendanceYesterday.cshtml",
@@ -181,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "UpdateStatus.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\UpdateStatus.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\UpdateStatus.cshtml",
@@ -194,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "ReplaceEmployee.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\ReplaceEmployee.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\ReplaceEmployee.cshtml",
@@ -207,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "RemoveApprovedLeaves.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\RemoveApprovedLeaves.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\RemoveApprovedLeaves.cshtml",
@@ -220,7 +237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "RemoveDayOff.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\RemoveDayOff.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\RemoveDayOff.cshtml",
@@ -233,20 +250,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "UpdateAttendance.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\UpdateAttendance.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\UpdateAttendance.cshtml",
               "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\UpdateAttendance.cshtml",
               "RelativeToolTip": "Uni_HR_Management_System\\Views\\Admin\\UpdateAttendance.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-02T10:54:52.258Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Program.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Program.cs",
@@ -259,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "AdminAuthAttribute.cs",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Filters\\AdminAuthAttribute.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Filters\\AdminAuthAttribute.cs",
@@ -272,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\appsettings.json",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\appsettings.json",
@@ -289,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "ViewAttendance.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\ViewAttendance.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Employee\\ViewAttendance.cshtml",
@@ -301,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "SubmitAnnualLeave.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\SubmitAnnualLeave.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Employee\\SubmitAnnualLeave.cshtml",
@@ -313,7 +330,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "AddHoliday.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\AddHoliday.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\AddHoliday.cshtml",
@@ -325,7 +342,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "AcademicAuthAttribute.cs",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Filters\\AcademicAuthAttribute.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Filters\\AcademicAuthAttribute.cs",
@@ -338,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Controllers\\HomeController.cs",
@@ -350,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Role.cs",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Models\\Role.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Models\\Role.cs",
@@ -363,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\appsettings.Development.json",
@@ -376,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "UniversityHrManagementSystemContext.cs",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Models\\UniversityHrManagementSystemContext.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Models\\UniversityHrManagementSystemContext.cs",
@@ -389,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AccountController.cs",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Controllers\\AccountController.cs",
@@ -402,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "ViewDeductions.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\ViewDeductions.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Employee\\ViewDeductions.cshtml",
@@ -415,7 +432,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "ViewPayroll.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\ViewPayroll.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Employee\\ViewPayroll.cshtml",
@@ -427,7 +444,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Leave.cs",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Models\\Leave.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Models\\Leave.cs",
@@ -439,7 +456,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "ViewLeaveStatus.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\ViewLeaveStatus.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Employee\\ViewLeaveStatus.cshtml",
@@ -451,20 +468,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "AdminController.cs",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Controllers\\AdminController.cs",
               "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Uni_HR_Management_System\\Controllers\\AdminController.cs",
-              "ViewState": "AgIAAPIAAAAAAAAAAAAYwAABAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAmwPEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T21:29:42.77Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "insertions updated.sql",
               "DocumentMoniker": "C:\\DB\\Uni_project\\University-HR-Management-System\\Mile Stone 2\\University Hr Management System\\insertions updated.sql",
               "ToolTip": "C:\\DB\\Uni_project\\University-HR-Management-System\\Mile Stone 2\\University Hr Management System\\insertions updated.sql",
@@ -473,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "final_implementation.sql",
               "DocumentMoniker": "C:\\DB\\Uni_project\\University-HR-Management-System\\Mile Stone 2\\University Hr Management System\\queries\\final_implementation.sql",
               "ToolTip": "C:\\DB\\Uni_project\\University-HR-Management-System\\Mile Stone 2\\University Hr Management System\\queries\\final_implementation.sql",
@@ -482,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ViewPerformance.cshtml",
               "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Admin\\ViewPerformance.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Admin\\ViewPerformance.cshtml",
