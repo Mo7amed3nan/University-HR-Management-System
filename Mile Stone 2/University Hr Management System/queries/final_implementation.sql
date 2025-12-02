@@ -1,6 +1,6 @@
-﻿create DATABASE University_HR_ManagementSystem;
+﻿create DATABASE University_HR_ManagementSystem_5;
 GO
-USE University_HR_ManagementSystem;
+USE University_HR_ManagementSystem_5;
 GO
 
 
