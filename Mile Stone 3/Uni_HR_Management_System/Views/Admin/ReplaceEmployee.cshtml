@@ -1,0 +1,20 @@
+﻿<h2>Replace Employee</h2>
+<form asp-action="ReplaceEmployee" method="post">
+    <div class="mb-3">
+        <label>Original Employee ID (Emp 1):</label>
+        <input type="number" name="emp1" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Replacement Employee ID (Emp 2):</label>
+        <input type="number" name="emp2" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>From Date:</label>
+        <input type="date" name="from" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>To Date:</label>
+        <input type="date" name="to" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Replacement</button>
+</form>

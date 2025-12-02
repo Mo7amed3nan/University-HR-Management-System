@@ -52,8 +52,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVqZWN0ZWRMZWF2ZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/GUC/Semester 5/Data Base I/Project/University-HR-Management-System/Mile Stone 3/Uni_HR_Management_System/Views/Admin/RemoveApprovedLeaves.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVtb3ZlQXBwcm92ZWRMZWF2ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GUC/Semester 5/Data Base I/Project/University-HR-Management-System/Mile Stone 3/Uni_HR_Management_System/Views/Admin/RemoveDayOff.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVtb3ZlRGF5T2ZmLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GUC/Semester 5/Data Base I/Project/University-HR-Management-System/Mile Stone 3/Uni_HR_Management_System/Views/Admin/ReplaceEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVwbGFjZUVtcGxveWVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GUC/Semester 5/Data Base I/Project/University-HR-Management-System/Mile Stone 3/Uni_HR_Management_System/Views/Admin/UpdateAttendance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlQXR0ZW5kYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GUC/Semester 5/Data Base I/Project/University-HR-Management-System/Mile Stone 3/Uni_HR_Management_System/Views/Admin/UpdateStatus.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlU3RhdHVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GUC/Semester 5/Data Base I/Project/University-HR-Management-System/Mile Stone 3/Uni_HR_Management_System/Views/Admin/ViewAttendanceYesterday.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld0F0dGVuZGFuY2VZZXN0ZXJkYXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GUC/Semester 5/Data Base I/Project/University-HR-Management-System/Mile Stone 3/Uni_HR_Management_System/Views/Admin/ViewPerformance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVmlld1BlcmZvcm1hbmNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GUC/Semester 5/Data Base I/Project/University-HR-Management-System/Mile Stone 3/Uni_HR_Management_System/Views/Employee/Index.cshtml]

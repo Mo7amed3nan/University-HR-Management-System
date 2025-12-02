@@ -1,25 +1,25 @@
-﻿<h2>Update Attendance</h2>
-<p>Updates the record for TODAY.</p>
-<a href="/Admin/Index">Back to Dashboard</a>
+﻿@{
+    ViewData["Title"] = "Update Attendance";
+}
 
-<form action="/Admin/UpdateAttendance" method="post">
+<h2>Update Attendance Record</h2>
+
+<form asp-action="UpdateAttendance" method="post">
 
     <label>Employee ID:</label>
     <input type="number" name="empId" required />
     <br /><br />
 
-    <!-- Not used in query but good for reference if needed later -->
-    <label>Date (Only updates Today per procedure):</label>
-    <input type="date" name="date" />
-    <br /><br />
-
     <label>Check In Time:</label>
-    <input type="time" name="inTime" required />
+    <input type="time" name="check_in" />
     <br /><br />
 
     <label>Check Out Time:</label>
-    <input type="time" name="outTime" required />
+    <input type="time" name="check_out" />
     <br /><br />
 
-    <button type="submit">Update Record</button>
+    <button type="submit">Update</button>
+
+    <a href="/Admin/Index">Cancel</a>
+
 </form>

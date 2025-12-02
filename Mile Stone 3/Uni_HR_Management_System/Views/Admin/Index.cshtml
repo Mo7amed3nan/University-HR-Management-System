@@ -2,43 +2,69 @@
     ViewData["Title"] = "Admin Dashboard";
 }
 
-<h1>Admin Dashboard</h1>
+<div class="container mt-4">
 
-@if (TempData["Message"] != null)
-{
-    <p style="color: green; font-weight: bold;">@TempData["Message"]</p>
-}
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h1>Admin Dashboard</h1>
+        <a href="/Account/Logout" class="btn btn-danger">Logout</a>
+    </div>
 
-<hr />
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            <strong>Success:</strong> @TempData["Message"]
+        </div>
+    }
 
-<h3>Reports</h3>
-<ul>
-    <li><a href="/Admin/ListEmployees">View All Employees</a></li>
-    <li><a href="/Admin/DepartmentStats">View Department Statistics</a></li>
-    <li><a href="/Admin/RejectedLeaves">View Rejected Medical Leaves</a></li>
-</ul>
+    <hr />
 
-<hr />
+    <div class="row">
 
-<h3>Actions</h3>
+        <div class="col-md-4">
+            <h3>Reports</h3>
+            <div class="list-group mb-4">
+                <a href="/Admin/ListEmployees" class="list-group-item list-group-item-action">View All Employees</a>
+                <a href="/Admin/DepartmentStats" class="list-group-item list-group-item-action">View Department Statistics</a>
+                <a href="/Admin/RejectedLeaves" class="list-group-item list-group-item-action">View Rejected Medical Leaves</a>
+                <a href="/Admin/ViewAttendanceYesterday" class="list-group-item list-group-item-action">View Attendance (Yesterday)</a>
+                <a href="/Admin/ViewPerformance" class="list-group-item list-group-item-action">View Performance (Winter)</a>
+            </div>
+        </div>
 
-<p>
-    <a href="/Admin/AddHoliday">Add New Holiday</a>
-</p>
+        <div class="col-md-4">
+            <h3>Daily Actions</h3>
+            <div class="card p-3 mb-4 bg-light">
+                <form action="/Admin/StartDay" method="post" style="margin-bottom: 10px;">
+                    <button type="submit" class="btn btn-primary w-100">Start Day (Initiate Attendance)</button>
+                </form>
 
-<p>
-    <a href="/Admin/UpdateAttendance">Update Attendance Record</a>
-</p>
+                <a href="/Admin/UpdateAttendance" class="btn btn-outline-primary w-100 mb-2">Update Attendance Record</a>
+                <a href="/Admin/UpdateStatus" class="btn btn-outline-info w-100">Update Employment Status</a>
+            </div>
+        </div>
 
-<!-- POST Actions -->
-<form action="/Admin/StartDay" method="post">
-    <button type="submit">Start Day (Initiate Attendance)</button>
-</form>
-<br />
+        <div class="col-md-4">
+            <h3>Management</h3>
+            <div class="list-group">
+                <a href="/Admin/AddHoliday" class="list-group-item list-group-item-action">Add New Holiday</a>
+                <a href="/Admin/ReplaceEmployee" class="list-group-item list-group-item-action">Replace Employee</a>
 
-<form action="/Admin/ClearResignedDeductions" method="post">
-    <button type="submit">Clear Resigned Deductions</button>
-</form>
+                <div class="list-group-item">
+                    <form action="/Admin/ClearResignedDeductions" method="post">
+                        <button type="submit" class="btn btn-warning w-100 btn-sm">Clear Resigned Deductions</button>
+                    </form>
+                </div>
 
-<hr />
-<a href="/Account/Logout">Logout</a>
+                <div class="list-group-item">
+                    <form action="/Admin/RemoveHolidayAttendance" method="post">
+                        <button type="submit" class="btn btn-danger w-100 btn-sm">Remove Holiday Attendance</button>
+                    </form>
+                </div>
+
+                <a href="/Admin/RemoveDayOff" class="list-group-item list-group-item-action">Remove Unattended Day Off</a>
+                <a href="/Admin/RemoveApprovedLeaves" class="list-group-item list-group-item-action">Remove Approved Leaves</a>
+            </div>
+        </div>
+
+    </div>
+</div>

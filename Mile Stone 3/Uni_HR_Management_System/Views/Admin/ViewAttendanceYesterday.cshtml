@@ -1,0 +1,28 @@
+﻿@model List<Uni_HR_Management_System.Models.AllEmployeeAttendance>
+
+<h2>Attendance for Yesterday</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Emp ID</th>
+            <th>Date</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AttendanceId</td>
+                <td>@item.EmpId</td>
+                <td>@item.Date?.ToShortDateString()</td>
+                <td>@item.CheckInTime</td>
+                <td>@item.CheckOutTime</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
