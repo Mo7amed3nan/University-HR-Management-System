@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Uni_HR_Management_System.Models.AnnualLeave>
+
+<h1>Annual Leave Requests</h1>
+<a href="/Employee/Index">Back</a>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Request ID</th>
+            <th>Date of Request</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Employee ID</th>
+            <th>Replacement ID</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var leave in Model)
+        {
+            <tr>
+                <td>@leave.Request.RequestId</td>
+                <td>@leave.Request.DateOfRequest</td>
+                <td>@leave.Request.StartDate</td>
+                <td>@leave.Request.EndDate</td>
+                <td>@leave.EmpId</td>
+                <td>@leave.ReplacementEmp</td>
+                <td>
+                    <form method="POST" asp-action="ApproveAnnualButton">
+                        <input type="hidden" name="requestId" value="@leave.RequestId" />
+                        <input type="hidden" name="replacementId" value="@leave.ReplacementEmp" />
+
+                        <button type="submit" class="btn btn-success">Approve</button>
+                    </form>
+                </td>
+
+            </tr>
+        }
+        <style>
+            tr {
+                border-bottom: 1px dashed #aaa;
+            }
+        </style>
+
+    </tbody>
+</table>

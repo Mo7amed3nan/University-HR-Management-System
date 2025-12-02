@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Uni_HR_Management_System")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a56ea955871f4d1817914d38be71439c0dafac5d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+538cd48c7eb148a3948fb4ee99a5feb7a0b28677")]
 [assembly: System.Reflection.AssemblyProductAttribute("Uni_HR_Management_System")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Uni_HR_Management_System")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

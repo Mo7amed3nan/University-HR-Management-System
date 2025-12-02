@@ -1,0 +1,22 @@
+﻿<h2>Apply for Compensation Leave</h2>
+<a href="/Employee/Index">Back</a>
+
+<form action="/Employee/SubmitCompensationLeave" method="post">
+    <label>Compensation Date:</label>
+    <input type="date" name="compensationDate" required />
+    <br /><br />
+
+    <label>Reason of Leave:</label>
+    <input type="text" name="reason" required />
+    <br /><br />
+
+    <label>Date of the Original Working Day:</label>
+    <input type="date" name="dateOfOriginalWorkday" required />
+    <br /><br />
+
+    <label>Replacement Employee ID:</label>
+    <input type="number" name="replacementId" required />
+    <br /><br />
+
+    <button type="submit">Submit Request</button>
+</form>

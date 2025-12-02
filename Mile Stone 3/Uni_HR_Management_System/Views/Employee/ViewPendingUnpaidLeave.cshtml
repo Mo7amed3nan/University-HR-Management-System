@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Uni_HR_Management_System.Models.UnpaidLeave>
+
+<h1>Unpiad Leave Requests</h1>
+<a href="/Employee/Index">Back</a>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Request ID</th>
+            <th>Date of Request</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Document Description</th>
+            <th>File Name</th>
+            <th>Employee ID</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var leave in Model)
+        {
+            <tr>
+                <td>@leave.Request.RequestId</td>
+                <td>@leave.Request.DateOfRequest</td>
+                <td>@leave.Request.StartDate</td>
+                <td>@leave.Request.EndDate</td>
+                <td>
+                    @foreach (var doc in leave.Documents)
+                    {
+                        <div>@doc.Description</div>
+                    }
+                </td>
+                <td>
+                    @foreach (var doc in leave.Documents)
+                    {
+                        <div>@doc.FileName</div>
+                    }
+                </td>
+                <td>@leave.EmpId</td>
+                <td>
+                    <form method="POST" asp-action="ApproveUnpaidButton">
+                        <input type="hidden" name="requestId" value="@leave.RequestId"/>
+                        <button type="submit" class="btn btn-success">Approve</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        <style>
+            tr {
+                border-bottom: 1px dashed #aaa;
+            }
+        </style>
+
+    </tbody>
+</table>
