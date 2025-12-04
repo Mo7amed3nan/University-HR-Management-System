@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\YOUSSEF\\Desktop\\Sem_5\\Databases\\Project_Sem\\Milestone3\\University-HR-Management-System\\Mile Stone 3\\",
+  "WorkspaceRootPath": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\users\\youssef\\desktop\\sem_5\\databases\\project_sem\\milestone3\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\users\\youssef\\desktop\\sem_5\\databases\\project_sem\\milestone3\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\employee\\evaluateemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\employee\\evaluateemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\employee\\evaluateemployee.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|c:\\users\\youssef\\desktop\\sem_5\\databases\\project_sem\\milestone3\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|d:\\guc\\semester 5\\data base i\\project\\university-hr-management-system\\mile stone 3\\uni_hr_management_system\\views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E242744D-7A30-4AB0-AD27-BE597AB8A98D}|Uni_HR_Management_System\\Uni_HR_Management_System.csproj|solutionrelative:uni_hr_management_system\\views\\employee\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -21,7 +21,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1133,
+          "DockedWidth": 1374,
           "SelectedChildIndex": -1,
           "Children": [
             {
@@ -31,22 +31,9 @@
           ]
         },
         {
-          "DockedWidth": 937,
+          "DockedWidth": 632,
           "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\YOUSSEF\\Desktop\\Sem_5\\Databases\\Project_Sem\\Milestone3\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\Index.cshtml",
-              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Employee\\Index.cshtml",
-              "ToolTip": "C:\\Users\\YOUSSEF\\Desktop\\Sem_5\\Databases\\Project_Sem\\Milestone3\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\Index.cshtml",
-              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Employee\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T21:51:27.345Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -57,26 +44,37 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\Index.cshtml",
+              "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Employee\\Index.cshtml",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\Index.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Employee\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T21:51:27.345Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "EvaluateEmployee.cshtml",
-              "DocumentMoniker": "C:\\Users\\YOUSSEF\\Desktop\\Sem_5\\Databases\\Project_Sem\\Milestone3\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\EvaluateEmployee.cshtml",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\EvaluateEmployee.cshtml",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Views\\Employee\\EvaluateEmployee.cshtml",
-              "ToolTip": "C:\\Users\\YOUSSEF\\Desktop\\Sem_5\\Databases\\Project_Sem\\Milestone3\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\EvaluateEmployee.cshtml*",
-              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Employee\\EvaluateEmployee.cshtml*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAHAAAAAAAAAA==",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Views\\Employee\\EvaluateEmployee.cshtml",
+              "RelativeToolTip": "Uni_HR_Management_System\\Views\\Employee\\EvaluateEmployee.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-02T21:36:49.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T21:36:49.479Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "EmployeeController.cs",
-              "DocumentMoniker": "C:\\Users\\YOUSSEF\\Desktop\\Sem_5\\Databases\\Project_Sem\\Milestone3\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Controllers\\EmployeeController.cs",
+              "DocumentMoniker": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Controllers\\EmployeeController.cs",
               "RelativeDocumentMoniker": "Uni_HR_Management_System\\Controllers\\EmployeeController.cs",
-              "ToolTip": "C:\\Users\\YOUSSEF\\Desktop\\Sem_5\\Databases\\Project_Sem\\Milestone3\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Controllers\\EmployeeController.cs*",
-              "RelativeToolTip": "Uni_HR_Management_System\\Controllers\\EmployeeController.cs*",
-              "ViewState": "AgIAACgBAAAAAAAAAADwv0gBAAAJAAAAAAAAAA==",
+              "ToolTip": "D:\\GUC\\Semester 5\\Data Base I\\Project\\University-HR-Management-System\\Mile Stone 3\\Uni_HR_Management_System\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "Uni_HR_Management_System\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAP8AAAAAAAAAAAAswA0BAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-02T17:11:17.738Z",
               "EditorCaption": ""

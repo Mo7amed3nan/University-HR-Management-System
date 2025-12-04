@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Apply Deduction";
+}
+
+<div class="container mt-5">
+    <div class="card shadow" style="max-width: 500px; margin: auto;">
+        <div class="card-header bg-danger text-white">
+            <h4>Apply Deduction</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="ApplyDeduction" method="post">
+
+                <div class="mb-3">
+                    <label class="form-label">Employee ID</label>
+                    <input type="number" name="empId" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Deduction Type</label>
+                    <select name="type" class="form-select">
+                        <option value="MissingHours">Missing Hours (< 8 hours)</option>
+                        <option value="MissingDays">Missing Days (Absent)</option>
+                        <option value="Unpaid">Unpaid Leave</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-danger w-100">Apply Deduction</button>
+                <a href="/HR/Index" class="btn btn-link w-100 mt-2 text-center">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,247 +1,227 @@
-﻿using Azure.Core;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+using Uni_HR_Management_System.Filters;
 using Uni_HR_Management_System.Models;
 
 namespace Uni_HR_Management_System.Controllers
 {
+    [HRAuth] // Protects the Controller
     public class HRController : Controller
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
         private readonly UniversityHrManagementSystemContext _context;
 
         public HRController(UniversityHrManagementSystemContext context)
         {
             _context = context;
         }
-        //HR Proccess Annual Accumulated Leave
-        [HttpGet]
-        public async Task<IActionResult> HRProccessAnnualAccLeave()
-        {
-            int? HR_ID = HttpContext.Session.GetInt32("EmpId");
-            var annualRequests = _context.AnnualLeaves
-         .Include(a => a.Request)
-         .Include(a => a.Emp)
-         .Where(a => a.Request.FinalApprovalStatus == "Pending" &&
-                     a.Request.EmployeeApproveLeaves.Any(e => e.Emp1Id == HR_ID))
-            .Select(a => new ConsolidatedLeaveViewModel
-            {
-                RequestId = a.RequestId,
-                StartDate = a.Request.StartDate,
-                EndDate = a.Request.EndDate,
-                Type = "Annual Leave"
-            });
-            var accRequests = _context.AccidentalLeaves
-        .Include(a => a.Request)
-        .Include(a => a.Emp)
-        .Where(a => a.Request.FinalApprovalStatus == "Pending" &&
-                    a.Request.EmployeeApproveLeaves.Any(e => e.Emp1Id == HR_ID))
-           .Select(a => new ConsolidatedLeaveViewModel
-           {
-               RequestId = a.RequestId,
-               StartDate = a.Request.StartDate,
-               EndDate = a.Request.EndDate,
-               Type = "Accidental Leave"
-           });
-            var consolidatedRequests = await annualRequests
-                .Union(accRequests)
-                .ToListAsync();
-            return View(consolidatedRequests);
-        }
 
-        [HttpPost]
-        public async Task<IActionResult> HRProccessAnnualAccLeave(int requestID)
-        {
-            int? Hr_Id = HttpContext.Session.GetInt32("EmpId");
-
-            try
-            {
-                var sql = "EXEC HR_approval_an_acc @request_ID={0},@HR_ID={1}";
-                await _context.Database.ExecuteSqlRawAsync(sql, requestID, Hr_Id);
-                TempData["Message"] = "Leave request with ID : "+requestID+" Processed successfully";
-                return RedirectToAction("HRProccessAnnualAccLeave");
-            }
-            catch(Exception ex)
-            {
-                TempData["Error"] = "Error proccessing leave: " + ex.Message;
-                return View("index");
-            }
-        }
-        //////////////////////////////////////////////////////////////////////
-        //HR Proccess Unpaid Leave
-        /////////////////////////////////////////////////////////////////////
-        [HttpGet]
-        public async Task<IActionResult> HRProccessUnpaidLeave()
-        {
-            int? HR_ID = HttpContext.Session.GetInt32("EmpId");
-            var unpaidRequests = _context.UnpaidLeaves
-            .Include(u => u.Request)
-            .Include(u => u.Emp)
-            .Where(u => u.Request.FinalApprovalStatus == "Pending" &&
-                        u.Request.EmployeeApproveLeaves.Any(e => e.Emp1Id == HR_ID))
-            .Select(u => new ConsolidatedLeaveViewModel
-            {
-            RequestId = u.RequestId,
-            StartDate = u.Request.StartDate,
-            EndDate = u.Request.EndDate,
-            Type = "Unpaid Leave"
-        });
-
-            var consolidatedRequests = await unpaidRequests.ToListAsync();
-            return View(consolidatedRequests);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> HRProccessUnpaidLeave(int requestID)
-        {
-            int? Hr_Id = HttpContext.Session.GetInt32("EmpId");
-
-            try
-            {
-                var sql = "EXEC HR_approval_Unpaid @request_ID={0},@HR_ID={1}";
-                await _context.Database.ExecuteSqlRawAsync(sql, requestID, Hr_Id);
-                TempData["Message"] = "Leave request with ID : " + requestID + " Processed successfully";
-                return RedirectToAction("HRProccessUnpaidLeave");
-            }
-            catch (Exception ex)
-            {
-                TempData["Error"] = "Error proccessing leave: " + ex.Message;
-                return View("index");
-            }
-        }
-        //////////////////////////////////////////////////////////////////////
-        //HR Proccess Compensation Leave
-        /////////////////////////////////////////////////////////////////////
-        [HttpGet]
-        public async Task<IActionResult> HRProccessCompensationLeave()
-        {
-            int? HR_ID = HttpContext.Session.GetInt32("EmpId");
-            var compensationRequests = _context.CompensationLeaves
-            .Include(u => u.Request)
-            .Include(u => u.Emp)
-            .Where(u => u.Request.FinalApprovalStatus == "Pending" &&
-                        u.Request.EmployeeApproveLeaves.Any(e => e.Emp1Id == HR_ID))
-            .Select(u => new ConsolidatedLeaveViewModel
-            {
-                RequestId = u.RequestId,
-                StartDate = u.Request.StartDate,
-                EndDate = u.Request.EndDate,
-                Type = "Compensation Leave"
-            });
-
-            var consolidatedRequests = await compensationRequests.ToListAsync();
-            return View(consolidatedRequests);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> HRProccessCompensationLeave(int requestID)
-        {
-            int? Hr_Id = HttpContext.Session.GetInt32("EmpId");
-
-            try
-            {
-                var sql = "EXEC HR_approval_comp @request_ID={0},@HR_ID={1}";
-                await _context.Database.ExecuteSqlRawAsync(sql, requestID, Hr_Id);
-                TempData["Message"] = "Leave request with ID : " + requestID + " Processed successfully";
-                return RedirectToAction("HRProccessCompensationLeave");
-            }
-            catch (Exception ex)
-            {
-                TempData["Error"] = "Error proccessing leave: " + ex.Message;
-                return View("index");
-            }
-        }
-        [HttpGet]
-        public IActionResult HRDeductionHours()
+        public IActionResult Index()
         {
             return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> HRDeductionHours(int empID)
+
+        // =========================================================================
+        // REQUIREMENT 2: Approve/Reject Annual & Accidental Leaves
+        // =========================================================================
+        [HttpGet]
+        public async Task<IActionResult> ProcessAnnualAccidentalLeaves()
         {
-            var sql = "EXEC Deduction_hours @employee_ID={0}";
+            int? hrId = HttpContext.Session.GetInt32("EmpId");
+
+            // 1. Fetch Annual Leaves assigned to this HR
+            var annual = await _context.AnnualLeaves
+                .Include(a => a.Request)
+                .Where(a => a.Request.FinalApprovalStatus == "Pending" &&
+                            a.Request.EmployeeApproveLeaves.Any(e => e.Emp1Id == hrId && e.Status == "Pending"))
+                .Select(a => new ConsolidatedLeaveViewModel
+                {
+                    RequestId = a.RequestId,
+                    Type = "Annual Leave",
+                    StartDate = a.Request.StartDate,
+                    EndDate = a.Request.EndDate
+                }).ToListAsync();
+
+            // 2. Fetch Accidental Leaves assigned to this HR
+            var accidental = await _context.AccidentalLeaves
+                .Include(a => a.Request)
+                .Where(a => a.Request.FinalApprovalStatus == "Pending" &&
+                            a.Request.EmployeeApproveLeaves.Any(e => e.Emp1Id == hrId && e.Status == "Pending"))
+                .Select(a => new ConsolidatedLeaveViewModel
+                {
+                    RequestId = a.RequestId,
+                    Type = "Accidental Leave",
+                    StartDate = a.Request.StartDate,
+                    EndDate = a.Request.EndDate
+                }).ToListAsync();
+
+            // 3. Combine them
+            var combinedList = annual.Concat(accidental).ToList();
+
+            return View(combinedList);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ProcessAnnualAccidentalLeaves(int requestId)
+        {
+            int? hrId = HttpContext.Session.GetInt32("EmpId");
             try
             {
-                await _context.Database.ExecuteSqlRawAsync(sql, empID);
-                TempData["Message"] = "Deduction for missing Hours for Employee ID : " + empID + " Processed successfully";
-
-                return View("HRDeductionHours");
+                // SP: HR_approval_an_acc
+                string sql = "EXEC HR_approval_an_acc @request_ID={0}, @HR_ID={1}";
+                await _context.Database.ExecuteSqlRawAsync(sql, requestId, hrId);
+                TempData["Message"] = $"Leave {requestId} processed successfully.";
             }
             catch (Exception ex)
             {
-                TempData["Error"] = "Error proccessing deductions: " + ex.Message;
-                return View("index");
+                TempData["Error"] = "Error processing leave: " + ex.Message;
             }
+            return RedirectToAction(nameof(ProcessAnnualAccidentalLeaves));
         }
+
+        // =========================================================================
+        // REQUIREMENT 3: Approve/Reject Unpaid Leaves
+        // =========================================================================
         [HttpGet]
-        public IActionResult HRDeductionDays()
+        public async Task<IActionResult> ProcessUnpaidLeaves()
+        {
+            int? hrId = HttpContext.Session.GetInt32("EmpId");
+
+            var list = await _context.UnpaidLeaves
+                .Include(u => u.Request)
+                .Where(u => u.Request.FinalApprovalStatus == "Pending" &&
+                            u.Request.EmployeeApproveLeaves.Any(e => e.Emp1Id == hrId && e.Status == "Pending"))
+                .Select(u => new ConsolidatedLeaveViewModel
+                {
+                    RequestId = u.RequestId,
+                    Type = "Unpaid Leave",
+                    StartDate = u.Request.StartDate,
+                    EndDate = u.Request.EndDate
+                }).ToListAsync();
+
+            return View(list);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ProcessUnpaidLeaves(int requestId)
+        {
+            int? hrId = HttpContext.Session.GetInt32("EmpId");
+            try
+            {
+                // SP: HR_approval_unpaid
+                string sql = "EXEC HR_approval_unpaid @request_ID={0}, @HR_ID={1}";
+                await _context.Database.ExecuteSqlRawAsync(sql, requestId, hrId);
+                TempData["Message"] = $"Unpaid Leave {requestId} processed.";
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = "Error: " + ex.Message;
+            }
+            return RedirectToAction(nameof(ProcessUnpaidLeaves));
+        }
+
+        // =========================================================================
+        // REQUIREMENT 4: Approve/Reject Compensation Leaves
+        // =========================================================================
+        [HttpGet]
+        public async Task<IActionResult> ProcessCompensationLeaves()
+        {
+            int? hrId = HttpContext.Session.GetInt32("EmpId");
+
+            var list = await _context.CompensationLeaves
+                .Include(c => c.Request)
+                .Where(c => c.Request.FinalApprovalStatus == "Pending" &&
+                            c.Request.EmployeeApproveLeaves.Any(e => e.Emp1Id == hrId && e.Status == "Pending"))
+                .Select(c => new ConsolidatedLeaveViewModel
+                {
+                    RequestId = c.RequestId,
+                    Type = "Compensation Leave",
+                    StartDate = c.Request.StartDate,
+                    EndDate = c.Request.EndDate
+                }).ToListAsync();
+
+            return View(list);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ProcessCompensationLeaves(int requestId)
+        {
+            int? hrId = HttpContext.Session.GetInt32("EmpId");
+            try
+            {
+                // SP: HR_approval_comp
+                string sql = "EXEC HR_approval_comp @request_ID={0}, @HR_ID={1}";
+                await _context.Database.ExecuteSqlRawAsync(sql, requestId, hrId);
+                TempData["Message"] = $"Compensation Leave {requestId} processed.";
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = "Error: " + ex.Message;
+            }
+            return RedirectToAction(nameof(ProcessCompensationLeaves));
+        }
+
+        // =========================================================================
+        // REQUIREMENT 5, 6, 7: Deductions
+        // =========================================================================
+
+        [HttpGet]
+        public IActionResult ApplyDeduction()
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> HRDeductionDays(int empID)
+        public async Task<IActionResult> ApplyDeduction(int empId, string type)
         {
-            var sql = "EXEC Deduction_days @employee_ID={0}";
             try
             {
-                await _context.Database.ExecuteSqlRawAsync(sql, empID);
-                TempData["Message"] = "Deduction for missing days for Employee ID : " + empID + " Processed successfully";
+                string sql = "";
+                if (type == "MissingHours")
+                    sql = "EXEC Deduction_hours @employee_ID={0}";
+                else if (type == "MissingDays")
+                    sql = "EXEC Deduction_days @employee_ID={0}";
+                else if (type == "Unpaid")
+                    sql = "EXEC Deduction_unpaid @employee_ID={0}";
 
-                return View("HRDeductionDays");
+                await _context.Database.ExecuteSqlRawAsync(sql, empId);
+                TempData["Message"] = $"Deduction ({type}) applied successfully for Employee {empId}.";
             }
             catch (Exception ex)
             {
-                TempData["Error"] = "Error proccessing deductions: " + ex.Message;
-                return View("index");
+                TempData["Error"] = "Deduction Failed: " + ex.Message;
             }
+            return RedirectToAction(nameof(ApplyDeduction));
         }
+
+        // =========================================================================
+        // REQUIREMENT 8: Generate Payroll
+        // =========================================================================
+
         [HttpGet]
-        public IActionResult HRDeductionUnpaid()
+        public IActionResult GeneratePayroll()
         {
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> HRDeductionUnpaid(int empID)
+        public async Task<IActionResult> GeneratePayroll(int empId, DateTime from, DateTime to)
         {
-            var sql = "EXEC Deduction_unpaid @employee_ID={0}";
             try
             {
-                await _context.Database.ExecuteSqlRawAsync(sql, empID);
-                TempData["Message"] = "Deduction for unpaid leaves for Employee ID : " + empID + " Processed successfully";
-
-                return View("HRDeductionUnpaid");
+                // SP: Add_Payroll
+                string sql = "EXEC Add_Payroll @employee_ID={0}, @from={1}, @to={2}";
+                await _context.Database.ExecuteSqlRawAsync(sql, empId, from, to);
+                TempData["Message"] = $"Payroll generated for Employee {empId}.";
             }
             catch (Exception ex)
             {
-                TempData["Error"] = "Error proccessing deductions: " + ex.Message;
-                return View("index");
+                TempData["Error"] = "Payroll generation failed: " + ex.Message;
             }
-        }
-        [HttpGet]
-        public IActionResult HRGeneratePayroll()
-        {
-            return View();
-        }
-        [HttpPost]
-        public async Task<IActionResult> HRGeneratePayroll(int empID,DateTime start,DateTime end)
-        {
-            var sql = "EXEC Add_Payroll  @employee_ID={0},@from={1}, @to={2}";
-            try
-            {
-                await _context.Database.ExecuteSqlRawAsync(sql, empID,start,end);
-                TempData["Message"] = "Generate payroll for Employee ID : " + empID + " Processed successfully";
-
-                return View("Index");
-            }
-            catch (Exception ex)
-            {
-                TempData["Error"] = "Error generating payroll: " + ex.Message;
-                return View("index");
-            }
+            return RedirectToAction(nameof(GeneratePayroll));
         }
     }
 }

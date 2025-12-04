@@ -2,54 +2,61 @@
     ViewData["Title"] = "HR Dashboard";
 }
 
-<h1>HR Employee Dashboard</h1>
-<hr />
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
+        <h1 class="text-primary">HR Dashboard</h1>
+        <a href="/Account/Logout" class="btn btn-danger">Logout</a>
+    </div>
 
-@if (TempData["Message"] != null)
-{
-    <div class="alert alert-success">@TempData["Message"]</div>
-}
-@if (TempData["Error"] != null)
-{
-    <div class="alert alert-danger">@TempData["Error"]</div>
-}
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success:</strong> @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error:</strong> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
 
-<h3>My Information</h3>
-<ul>
-    <li><a href="/Employee/ViewAttendance">View My Attendance</a></li>
-    <li><a href="/Employee/ViewPayroll">View Last Month Payroll</a></li>
-    <li><a href="/Employee/ViewPerformance">View My Performance</a></li>
-    <li><a href="/Employee/ViewDeductions">View Deductions</a></li>
-</ul>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0">Leave Management</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="/HR/ProcessAnnualAccidentalLeaves" class="list-group-item list-group-item-action">
+                        Process Annual & Accidental Leaves
+                    </a>
+                    <a href="/HR/ProcessUnpaidLeaves" class="list-group-item list-group-item-action">
+                        Process Unpaid Leaves
+                    </a>
+                    <a href="/HR/ProcessCompensationLeaves" class="list-group-item list-group-item-action">
+                        Process Compensation Leaves
+                    </a>
+                </div>
+            </div>
+        </div>
 
-<h3>Leave Management</h3>
-<ul>
-    <li><a href="/Employee/SubmitAnnualLeave">Apply for Annual Leave</a></li>
-    <li><a href="/Employee/SubmitAccidentalLeave">Apply for Accidental Leave</a></li>
-    <li><a href="/Employee/SubmitMedicalLeave">Apply for Medical Leave</a></li>
-    <li><a href="/Employee/SubmitUnpaidLeave">Apply for Unpaid Leave</a></li>
-    <li><a href="/Employee/SubmitCompensationLeave">Apply for Compensation Leave</a></li>
-    <li><a href="/Employee/ViewPendingUnpaidLeave">Approve Unpaid Leave</a></li>
-    <li><a href="/Employee/EvaluateEmployee">Evaluate Employee</a></li>
-    <li><a href="/Employee/ViewPendingAnnualLeave">Approve Annual Leave</a></li>
-    <li><a href="/Employee/ViewLeaveStatus">View Leave Status</a></li>
-</ul>
-
-
-<h3>HR Management</h3>
-<ul>
-    <li><a href="/HR/HRProccessAnnualAccLeave">Process Accidental/Annual Leaves</a></li>
-    <li><a href="/HR/HRProccessUnpaidLeave">Process Unpaid Leaves</a></li>
-    <li><a href="/HR/HRProccessCompensationLeave">Process Compensation Leaves</a></li>
-    <li><a href="/HR/HRDeductionHours">Proccess Deductions for missing Hours</a></li>
-    <li><a href="/HR/HRDeductionDays">Proccess Deductions for missing Days</a></li>
-    <li><a href="/HR/HRDeductionUnpaid">Proccess Deductions for Unpaid Leaves</a></li>
-    <li><a href="/HR/HRGeneratePayroll">Generate Payroll</a></li>
-
-
-
-</ul>
-
-<hr />
-
-<a href="/Account/Logout">Logout</a>
+        <div class="col-md-6">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Financials & Payroll</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="/HR/ApplyDeduction" class="list-group-item list-group-item-action">
+                        Apply Deduction (Hours/Days)
+                    </a>
+                    <a href="/HR/GeneratePayroll" class="list-group-item list-group-item-action">
+                        Generate Monthly Payroll
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

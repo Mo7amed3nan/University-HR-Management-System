@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Generate Payroll";
+}
+
+<div class="container mt-5">
+    <div class="card shadow" style="max-width: 500px; margin: auto;">
+        <div class="card-header bg-success text-white">
+            <h4>Generate Monthly Payroll</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="GeneratePayroll" method="post">
+
+                <div class="mb-3">
+                    <label class="form-label">Employee ID</label>
+                    <input type="number" name="empId" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Payroll Start Date</label>
+                    <input type="date" name="from" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Payroll End Date</label>
+                    <input type="date" name="to" class="form-control" required />
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">Run Payroll</button>
+                <a href="/HR/Index" class="btn btn-link w-100 mt-2 text-center">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
