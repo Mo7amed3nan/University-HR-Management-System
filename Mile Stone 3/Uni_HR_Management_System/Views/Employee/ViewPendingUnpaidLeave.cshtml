@@ -1,54 +1,74 @@
 ﻿@model IEnumerable<Uni_HR_Management_System.Models.UnpaidLeave>
 
-<h1>Unpiad Leave Requests</h1>
-<a href="/Employee/Index">Back</a>
-<table border="1">
-    <thead>
-        <tr>
-            <th>Request ID</th>
-            <th>Date of Request</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Document Description</th>
-            <th>File Name</th>
-            <th>Employee ID</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var leave in Model)
-        {
-            <tr>
-                <td>@leave.Request.RequestId</td>
-                <td>@leave.Request.DateOfRequest</td>
-                <td>@leave.Request.StartDate</td>
-                <td>@leave.Request.EndDate</td>
-                <td>
-                    @foreach (var doc in leave.Documents)
-                    {
-                        <div>@doc.Description</div>
-                    }
-                </td>
-                <td>
-                    @foreach (var doc in leave.Documents)
-                    {
-                        <div>@doc.FileName</div>
-                    }
-                </td>
-                <td>@leave.EmpId</td>
-                <td>
-                    <form method="POST" asp-action="ApproveUnpaidButton">
-                        <input type="hidden" name="requestId" value="@leave.RequestId"/>
-                        <button type="submit" class="btn btn-success">Approve</button>
-                    </form>
-                </td>
-            </tr>
-        }
-        <style>
-            tr {
-                border-bottom: 1px dashed #aaa;
-            }
-        </style>
+@{
+    ViewData["Title"] = "Approve Unpaid Leaves";
+}
 
-    </tbody>
-</table>
+<div class="container py-4 animate__animated animate__fadeIn">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-warning fw-bold"><i class="fas fa-file-invoice me-2"></i>Pending Unpaid Leaves</h2>
+        <a href="/Employee/Index" class="btn btn-secondary shadow-sm">Back</a>
+    </div>
+
+    <div class="card shadow border-0 border-top border-warning border-4">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="bg-warning text-dark">
+                        <tr>
+                            <th>Req ID</th>
+                            <th>Employee</th>
+                            <th>Duration</th>
+                            <th>Supporting Documents</th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var leave in Model)
+                        {
+                            <tr>
+                                <td class="fw-bold">#@leave.RequestId</td>
+                                <td><span class="badge bg-light text-dark border">ID: @leave.EmpId</span></td>
+                                <td>
+                                    <div class="small text-muted">@leave.Request.StartDate?.ToString("yyyy-MM-dd")</div>
+                                    <div class="small text-muted">to @leave.Request.EndDate?.ToString("yyyy-MM-dd")</div>
+                                </td>
+                                <td>
+                                    @if (leave.Documents != null && leave.Documents.Any())
+                                    {
+                                        <ul class="list-unstyled mb-0 small">
+                                            @foreach (var doc in leave.Documents)
+                                            {
+                                                <li class="mb-1">
+                                                    <i class="fas fa-paperclip text-secondary me-1"></i>
+                                                    <strong>@doc.FileName</strong> <span class="text-muted">(@doc.Description)</span>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted fst-italic">No documents attached</span>
+                                    }
+                                </td>
+                                <td class="text-center">
+                                    <form method="POST" asp-action="ApproveUnpaidButton">
+                                        <input type="hidden" name="requestId" value="@leave.RequestId" />
+                                        <button type="submit" class="btn btn-success btn-sm w-100 shadow-sm">
+                                            <i class="fas fa-check-circle me-2"></i>Approve / Process
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                        @if (!Model.Any())
+                        {
+                            <tr><td colspan="5" class="text-center text-muted py-4">No pending unpaid leave requests found.</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

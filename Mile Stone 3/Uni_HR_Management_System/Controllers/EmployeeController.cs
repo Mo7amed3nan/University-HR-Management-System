@@ -178,6 +178,7 @@ namespace Uni_HR_Management_System.Controllers
           .Include(u => u.Request)
               .ThenInclude(r => r.EmployeeApproveLeaves)
           .Include(u => u.Emp)
+          .Include(u => u.Documents)
           .Where(u => u.Request.FinalApprovalStatus == "Pending" &&
                       u.Request.EmployeeApproveLeaves.Any(e => e.Emp1Id == managerId && e.Status == "Pending"))
           .ToListAsync();

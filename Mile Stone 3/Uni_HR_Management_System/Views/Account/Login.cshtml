@@ -1,28 +1,105 @@
 ﻿@{
     ViewData["Title"] = "Login";
+
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        @ViewData["Title"] -
+        University HR System
+    </title>
 
-<h2>Login</h2>
+    <!-- Bootstrap CSS (Ensure this link is correct or use your local lib) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
+    <!-- Font Awesome for Icons (Optional but recommended) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-@if (ViewBag.Error != null)
-{
-    <p style="color: red;">@ViewBag.Error</p>
-}
+    <style>
+        body {
+            background-color: #f0f2f5; /* Light grey background */
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center; /* Vertical center */
+            justify-content: center; /* Horizontal center */
+        }
 
-<form asp-action="Login" method="post">
+        .login-card {
+            width: 100%;
+            max-width: 400px; /* Limit width on large screens */
+            border: none;
+            border-radius: 10px; /* Rounded corners */
+        }
 
-    <div>
-        <label>User ID / Email:</label>
-        <input type="text" name="userName" required />
+        .card-header {
+            background-color: #0d6efd; /* Bootstrap Primary Blue */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-top-left-radius: 10px !important;
+            border-top-right-radius: 10px !important;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card login-card shadow-lg">
+
+        <div class="card-header">
+            <h3 class="mb-0"><i class="fas fa-university me-2"></i>Login</h3>
+            <small>University HR System</small>
+        </div>
+
+        <div class="card-body p-4">
+
+            @if (ViewBag.Error != null)
+            {
+
+                <div class="alert alert-danger text-center" role="alert">
+                    <i class="fas fa-exclamation-circle me-1"></i> @ViewBag.Error
+            </div>
+            }
+
+            <form asp-action="Login" method="post">
+
+                <!-- User ID Input -->
+                <div class="mb-3">
+                    <label class="form-label fw-bold">User ID / Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <input type="text" name="userName" class="form-control" placeholder="Enter ID or Admin Email" required autofocus />
+                    </div>
+                </div>
+
+                <!-- Password Input -->
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                        <input type="password" name="password" class="form-control" placeholder="Enter Password" required />
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="card-footer text-center text-muted py-3">
+            <small>&copy; 2025 University HR System</small>
+        </div>
     </div>
-    <br />
 
-    <div>
-        <label>Password:</label>
-        <input type="password" name="password" required />
-    </div>
-    <br />
-
-    <button type="submit">Sign In</button>
-
-</form>
+</body>
+</html>

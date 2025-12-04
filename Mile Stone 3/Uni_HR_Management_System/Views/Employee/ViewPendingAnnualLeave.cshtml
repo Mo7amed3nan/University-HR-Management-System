@@ -1,45 +1,65 @@
 ﻿@model IEnumerable<Uni_HR_Management_System.Models.AnnualLeave>
 
-<h1>Annual Leave Requests</h1>
-<a href="/Employee/Index">Back</a>
-<table border="1">
-    <thead>
-        <tr>
-            <th>Request ID</th>
-            <th>Date of Request</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Employee ID</th>
-            <th>Replacement ID</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var leave in Model)
-        {
-            <tr>
-                <td>@leave.Request.RequestId</td>
-                <td>@leave.Request.DateOfRequest</td>
-                <td>@leave.Request.StartDate</td>
-                <td>@leave.Request.EndDate</td>
-                <td>@leave.EmpId</td>
-                <td>@leave.ReplacementEmp</td>
-                <td>
-                    <form method="POST" asp-action="ApproveAnnualButton">
-                        <input type="hidden" name="requestId" value="@leave.RequestId" />
-                        <input type="hidden" name="replacementId" value="@leave.ReplacementEmp" />
+@{
+    ViewData["Title"] = "Approve Annual Leaves";
+}
 
-                        <button type="submit" class="btn btn-success">Approve</button>
-                    </form>
-                </td>
+<div class="container py-4 animate__animated animate__fadeIn">
+    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-warning fw-bold"><i class="fas fa-user-clock me-2"></i>Pending Annual Leaves</h2>
+        <a href="/Employee/Index" class="btn btn-secondary shadow-sm">Back</a>
+    </div>
 
-            </tr>
-        }
-        <style>
-            tr {
-                border-bottom: 1px dashed #aaa;
-            }
-        </style>
+    <div class="card shadow border-0 border-top border-warning border-4">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="bg-warning text-dark">
+                        <tr>
+                            <th>Req ID</th>
+                            <th>Employee ID</th>
+                            <th>Duration</th>
+                            <th>Dates</th>
+                            <th>Proposed Replacement</th>
+                            <th class="text-center" style="width: 250px;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var leave in Model)
+                        {
+                            <tr>
+                                <td class="fw-bold">#@leave.RequestId</td>
+                                <td><span class="badge bg-light text-dark border">@leave.EmpId</span></td>
+                                <td>@leave.Request.NumDays days</td>
+                                <td>
+                                    <div class="small text-muted">@leave.Request.StartDate?.ToString("yyyy-MM-dd")</div>
+                                    <div class="small text-muted">to @leave.Request.EndDate?.ToString("yyyy-MM-dd")</div>
+                                </td>
+                                <td class="fw-bold text-primary">ID: @leave.ReplacementEmp</td>
+                                <td>
+                                    <form method="POST" asp-action="ApproveAnnualButton" class="d-flex gap-2 align-items-center">
+                                        <input type="hidden" name="requestId" value="@leave.RequestId" />
+                                        
+                                        <div class="input-group input-group-sm">
+                                            <span class="input-group-text bg-light" title="Confirm Replacement ID"><i class="fas fa-user-check"></i></span>
+                                            <input type="number" name="ReplacementEmp" class="form-control" value="@leave.ReplacementEmp" required placeholder="Rep ID" />
+                                        </div>
 
-    </tbody>
-</table>
+                                        <button type="submit" class="btn btn-success btn-sm shadow-sm" title="Approve Request">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                        @if (!Model.Any())
+                        {
+                            <tr><td colspan="6" class="text-center text-muted py-4">No pending annual leave requests found.</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

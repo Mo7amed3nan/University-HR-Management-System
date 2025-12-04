@@ -1,60 +1,83 @@
 ﻿@{
     ViewData["Title"] = "HR Dashboard";
+    var empId = Context.Session.GetInt32("EmpId");
 }
 
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-3">
-        <h1 class="text-primary">HR Dashboard</h1>
-        <a href="/Account/Logout" class="btn btn-danger">Logout</a>
+<div class="container-fluid py-4 animate__animated animate__fadeIn">
+
+    <!-- Header -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <h2 class="h3 mb-1 text-primary fw-bold"><i class="fas fa-user-tie me-2"></i>HR Management</h2>
+                        <p class="text-muted mb-0">Payroll processing and leave approval center.</p>
+                    </div>
+                    <div class="text-end">
+                        <div class="fw-bold text-dark">HR ID: #@empId</div>
+                        <a href="/Account/Logout" class="btn btn-outline-danger btn-sm mt-1">
+                            <i class="fas fa-sign-out-alt me-1"></i>Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Messages -->
     @if (TempData["Message"] != null)
     {
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Success:</strong> @TempData["Message"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <div class="alert alert-success shadow-sm border-start border-success border-4">
+            <i class="fas fa-check-circle me-2"></i>@TempData["Message"]
         </div>
     }
     @if (TempData["Error"] != null)
     {
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Error:</strong> @TempData["Error"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <div class="alert alert-danger shadow-sm border-start border-danger border-4">
+            <i class="fas fa-exclamation-triangle me-2"></i>@TempData["Error"]
         </div>
     }
 
-    <div class="row">
+    <div class="row g-4">
+        <!-- Leave Management -->
         <div class="col-md-6">
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-info text-white">
-                    <h5 class="mb-0">Leave Management</h5>
+            <div class="card shadow-sm h-100 border-top border-info border-4">
+                <div class="card-header bg-white py-3">
+                    <h5 class="mb-0 text-info fw-bold"><i class="fas fa-clipboard-check me-2"></i>Leave Approvals</h5>
                 </div>
                 <div class="list-group list-group-flush">
-                    <a href="/HR/ProcessAnnualAccidentalLeaves" class="list-group-item list-group-item-action">
-                        Process Annual & Accidental Leaves
+                    <a href="/HR/ProcessAnnualAccidentalLeaves" class="list-group-item list-group-item-action py-3 d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-calendar-check text-primary me-3"></i> Annual & Accidental Leaves</span>
+                        <i class="fas fa-chevron-right text-muted small"></i>
                     </a>
-                    <a href="/HR/ProcessUnpaidLeaves" class="list-group-item list-group-item-action">
-                        Process Unpaid Leaves
+                    <a href="/HR/ProcessUnpaidLeaves" class="list-group-item list-group-item-action py-3 d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-wallet text-warning me-3"></i> Unpaid Leaves</span>
+                        <i class="fas fa-chevron-right text-muted small"></i>
                     </a>
-                    <a href="/HR/ProcessCompensationLeaves" class="list-group-item list-group-item-action">
-                        Process Compensation Leaves
+                    <a href="/HR/ProcessCompensationLeaves" class="list-group-item list-group-item-action py-3 d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-gift text-success me-3"></i> Compensation Leaves</span>
+                        <i class="fas fa-chevron-right text-muted small"></i>
                     </a>
                 </div>
             </div>
         </div>
 
+        <!-- Financials -->
         <div class="col-md-6">
-            <div class="card shadow-sm mb-4">
-                <div class="card-header bg-success text-white">
-                    <h5 class="mb-0">Financials & Payroll</h5>
+            <div class="card shadow-sm h-100 border-top border-success border-4">
+                <div class="card-header bg-white py-3">
+                    <h5 class="mb-0 text-success fw-bold"><i class="fas fa-money-bill-wave me-2"></i>Payroll & Deductions</h5>
                 </div>
-                <div class="list-group list-group-flush">
-                    <a href="/HR/ApplyDeduction" class="list-group-item list-group-item-action">
-                        Apply Deduction (Hours/Days)
-                    </a>
-                    <a href="/HR/GeneratePayroll" class="list-group-item list-group-item-action">
-                        Generate Monthly Payroll
-                    </a>
+                <div class="card-body">
+                    <div class="d-grid gap-3">
+                        <a href="/HR/ApplyDeduction" class="btn btn-outline-danger py-3 text-start shadow-sm">
+                            <i class="fas fa-minus-circle fa-lg me-2"></i> Apply Deduction (Hours/Days)
+                        </a>
+                        <a href="/HR/GeneratePayroll" class="btn btn-success py-3 text-start shadow-sm text-white">
+                            <i class="fas fa-file-invoice-dollar fa-lg me-2"></i> Generate Monthly Payroll
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

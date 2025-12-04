@@ -1,70 +1,125 @@
 ﻿@{
     ViewData["Title"] = "Admin Dashboard";
+    // Retrieve role from session to display
+    var userRole = Context.Session.GetString("Role") ?? "Admin";
+    // Since Admin ID is hardcoded, we can display a generic ID or email
+    var adminEmail = "admin@guc.edu.eg";
 }
 
-<div class="container mt-4">
+<div class="container-fluid animate__animated animate__fadeIn">
 
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <h1>Admin Dashboard</h1>
-        <a href="/Account/Logout" class="btn btn-danger">Logout</a>
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h3 mb-0 text-gray-800">Admin Dashboard</h1>
+            <p class="text-muted">System Overview & Controls</p>
+        </div>
+        <a href="/Account/Logout" class="btn btn-outline-danger shadow-sm">
+            <i class="fas fa-sign-out-alt me-2"></i>Logout
+        </a>
     </div>
 
+    <!-- Feedback Messages -->
     @if (TempData["Message"] != null)
     {
-        <div class="alert alert-success">
-            <strong>Success:</strong> @TempData["Message"]
+        <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+            <i class="fas fa-check-circle me-2"></i> @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
 
-    <hr />
+    <!-- Admin Profile Card -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm border-0 border-start border-primary border-4">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle text-primary">
+                                <i class="fas fa-user-shield fa-2x"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h5 class="mb-1">Welcome, System Administrator</h5>
+                            <div class="text-muted small">
+                                <i class="fas fa-envelope me-1"></i> @adminEmail
+                                <span class="mx-2">|</span>
+                                <i class="fas fa-id-badge me-1"></i> Role: <strong>@userRole</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
+        
 
-        <div class="col-md-4">
-            <h3>Reports</h3>
-            <div class="list-group mb-4">
-                <a href="/Admin/ListEmployees" class="list-group-item list-group-item-action">View All Employees</a>
-                <a href="/Admin/DepartmentStats" class="list-group-item list-group-item-action">View Department Statistics</a>
-                <a href="/Admin/RejectedLeaves" class="list-group-item list-group-item-action">View Rejected Medical Leaves</a>
-                <a href="/Admin/ViewAttendanceYesterday" class="list-group-item list-group-item-action">View Attendance (Yesterday)</a>
-                <a href="/Admin/ViewPerformance" class="list-group-item list-group-item-action">View Performance (Winter)</a>
-            </div>
-        </div>
+        <!-- Actions Column -->
+        <div class="col-lg-6 mb-4">
+            <!-- Critical Daily Actions -->
+            <div class="card shadow-sm mb-4 border-start border-warning border-4">
+                <div class="card-body">
+                    <h5 class="card-title text-warning"><i class="fas fa-exclamation-triangle me-2"></i>Daily Operations</h5>
+                    <p class="card-text text-muted small">Perform these actions at the start of every work day.</p>
 
-        <div class="col-md-4">
-            <h3>Daily Actions</h3>
-            <div class="card p-3 mb-4 bg-light">
-                <form action="/Admin/StartDay" method="post" style="margin-bottom: 10px;">
-                    <button type="submit" class="btn btn-primary w-100">Start Day (Initiate Attendance)</button>
-                </form>
-
-                <a href="/Admin/UpdateAttendance" class="btn btn-outline-primary w-100 mb-2">Update Attendance Record</a>
-                <a href="/Admin/UpdateStatus" class="btn btn-outline-info w-100">Update Employment Status</a>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <h3>Management</h3>
-            <div class="list-group">
-                <a href="/Admin/AddHoliday" class="list-group-item list-group-item-action">Add New Holiday</a>
-                <a href="/Admin/ReplaceEmployee" class="list-group-item list-group-item-action">Replace Employee</a>
-
-                <div class="list-group-item">
-                    <form action="/Admin/ClearResignedDeductions" method="post">
-                        <button type="submit" class="btn btn-warning w-100 btn-sm">Clear Resigned Deductions</button>
+                    <form action="/Admin/StartDay" method="post" class="mb-2">
+                        <button type="submit" class="btn btn-warning w-100 text-dark fw-bold">
+                            <i class="fas fa-play me-2"></i> Start New Day (Initiate Attendance)
+                        </button>
                     </form>
                 </div>
+            </div>
 
-                <div class="list-group-item">
-                    <form action="/Admin/RemoveHolidayAttendance" method="post">
-                        <button type="submit" class="btn btn-danger w-100 btn-sm">Remove Holiday Attendance</button>
-                    </form>
+            <!-- Management Actions -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h5 class="m-0 font-weight-bold text-success"><i class="fas fa-cogs me-2"></i>System Management</h5>
                 </div>
+                <div class="card-body">
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <a href="/Admin/AddHoliday" class="btn btn-outline-success w-100 text-start">
+                                <i class="fas fa-umbrella-beach me-2"></i> Add Holiday
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/Admin/UpdateAttendance" class="btn btn-outline-primary w-100 text-start">
+                                <i class="fas fa-user-clock me-2"></i> Update Attendance
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/Admin/ReplaceEmployee" class="btn btn-outline-secondary w-100 text-start">
+                                <i class="fas fa-exchange-alt me-2"></i> Replace Employee
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/Admin/UpdateStatus" class="btn btn-outline-secondary w-100 text-start">
+                                <i class="fas fa-sync-alt me-2"></i> Update Status
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/Admin/RemoveDayOff" class="btn btn-outline-danger w-100 text-start">
+                                <i class="fas fa-eraser me-2"></i> Clean Day-Offs
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="/Admin/RemoveApprovedLeaves" class="btn btn-outline-danger w-100 text-start">
+                                <i class="fas fa-trash-alt me-2"></i> Clean Leaves
+                            </a>
+                        </div>
 
-                <a href="/Admin/RemoveDayOff" class="list-group-item list-group-item-action">Remove Unattended Day Off</a>
-                <a href="/Admin/RemoveApprovedLeaves" class="list-group-item list-group-item-action">Remove Approved Leaves</a>
+                        <div class="col-12 mt-2">
+                            <form action="/Admin/ClearResignedDeductions" method="post">
+                                <button type="submit" class="btn btn-danger w-100 text-start">
+                                    <i class="fas fa-user-slash me-2"></i> Clear Resigned Deductions
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 </div>

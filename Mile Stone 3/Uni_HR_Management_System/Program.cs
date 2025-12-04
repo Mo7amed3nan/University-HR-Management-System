@@ -13,11 +13,14 @@ builder.Services.AddSession(options =>
   options.Cookie.IsEssential = true;
 });
 
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddDbContext<UniversityHrManagementSystemContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
+app.UseSession();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

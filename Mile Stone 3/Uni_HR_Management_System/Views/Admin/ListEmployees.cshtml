@@ -1,58 +1,63 @@
-﻿@model List<Uni_HR_Management_System.Models.AllEmployeeProfile>
+﻿@model IEnumerable<Uni_HR_Management_System.Models.AllEmployeeProfile>
 
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2>All Employee Profiles</h2>
-        <a href="/Admin/Index" class="btn btn-secondary">Back to Dashboard</a>
+@{
+    ViewData["Title"] = "All Employees";
+}
+
+<div class="container animate__animated animate__fadeIn">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary"><i class="fas fa-users me-2"></i>All Employee Profiles</h2>
+        <a href="/Admin/Index" class="btn btn-secondary shadow-sm"><i class="fas fa-arrow-left me-2"></i>Back to Dashboard</a>
     </div>
 
-    @if (Model.Count == 0)
-    {
-        <div class="alert alert-warning">No employees found in the database.</div>
-    }
-    else
-    {
-        <table class="table table-bordered table-striped table-hover">
-            <thead class="table-dark">
-                <tr>
-                    <th>ID</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                    <th>Contract</th>
-                    <th>Day Off</th>
-                    <th>Annual Bal.</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var emp in Model)
-                {
-                    <tr>
-                        <td>@emp.EmployeeId</td>
-                        <td>@emp.FirstName @emp.LastName</td>
-                        <td>@emp.Email</td>
-
-                        <td>
-                            @if (emp.EmploymentStatus?.ToLower() == "active")
-                            {
-                                <span class="badge bg-success">Active</span>
-                            }
-                            else if (emp.EmploymentStatus?.ToLower() == "resigned")
-                            {
-                                <span class="badge bg-danger">Resigned</span>
-                            }
-                            else
-                            {
-                                <span class="badge bg-warning text-dark">@emp.EmploymentStatus</span>
-                            }
-                        </td>
-
-                        <td>@emp.TypeOfContract</td>
-                        <td>@emp.OfficialDayOff</td>
-                        <td>@emp.AnnualBalance</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered mb-0 align-middle">
+                    <thead class="bg-light text-secondary">
+                        <tr>
+                            <th class="ps-3">ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Status</th>
+                            <th>Contract Type</th>
+                            <th>Annual Bal</th>
+                            <th>Accidental Bal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="ps-3 fw-bold text-dark">@item.EmployeeId</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 35px; height: 35px;">
+                                            <i class="fas fa-user text-secondary"></i>
+                                        </div>
+                                        <div>@item.FirstName @item.LastName</div>
+                                    </div>
+                                </td>
+                                <td>@item.Email</td>
+                                <td>
+                                    @if (item.EmploymentStatus == "active")
+                                    {
+                                        <span class="badge bg-success bg-opacity-10 text-success border border-success">Active</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary">@item.EmploymentStatus</span>
+                                    }
+                                </td>
+                                <td>@item.TypeOfContract</td>
+                                <td class="text-center">@item.AnnualBalance</td>
+                                <td class="text-center">@item.AccidentalBalance</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

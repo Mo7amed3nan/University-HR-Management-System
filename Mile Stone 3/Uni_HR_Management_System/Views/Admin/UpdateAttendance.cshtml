@@ -2,24 +2,47 @@
     ViewData["Title"] = "Update Attendance";
 }
 
-<h2>Update Attendance Record</h2>
+<div class="container mt-5 animate__animated animate__fadeInUp">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white py-3">
+                    <h4 class="mb-0"><i class="fas fa-clock me-2"></i>Update Attendance</h4>
+                </div>
+                <div class="card-body p-4">
+                    <p class="alert alert-info text-center small"><i class="fas fa-info-circle me-1"></i> Updates the record for <strong>TODAY</strong> only.</p>
 
-<form asp-action="UpdateAttendance" method="post">
+                    <form action="/Admin/UpdateAttendance" method="post">
 
-    <label>Employee ID:</label>
-    <input type="number" name="empId" required />
-    <br /><br />
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Employee ID</label>
+                            <input type="number" name="empId" class="form-control" required placeholder="Enter Employee ID" />
+                        </div>
 
-    <label>Check In Time:</label>
-    <input type="time" name="check_in" />
-    <br /><br />
+                        <!-- Date input kept for visual reference, even if SQL uses GETDATE() -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-muted">Date Reference</label>
+                            <input type="date" name="date" class="form-control bg-light" readonly value="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                        </div>
 
-    <label>Check Out Time:</label>
-    <input type="time" name="check_out" />
-    <br /><br />
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label class="form-label fw-bold">Check In</label>
+                                <input type="time" name="inTime" class="form-control" required />
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label fw-bold">Check Out</label>
+                                <input type="time" name="outTime" class="form-control" required />
+                            </div>
+                        </div>
 
-    <button type="submit">Update</button>
-
-    <a href="/Admin/Index">Cancel</a>
-
-</form>
+                        <div class="d-grid mt-3">
+                            <button type="submit" class="btn btn-primary btn-lg">Update Record</button>
+                            <a href="/Admin/Index" class="btn btn-link mt-2 text-decoration-none">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

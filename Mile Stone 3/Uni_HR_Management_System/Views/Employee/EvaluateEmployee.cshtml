@@ -1,18 +1,74 @@
-﻿<h2>Evaluate an Employee</h2>
-<a href="/Employee/Index">Back</a>
+﻿@{
+    ViewData["Title"] = "Evaluate Employee";
+}
 
-<form method="POST" action="/Employee/EvaluateEmployee">
-    <label>Employee ID: </label>
-    <input type="number" name="empId" required />
-    <br><br>
-    <label>Rating: </label>
-    <input type="number" name="rating" required/>
-    <br><br>
-    <label>Comment: </label>
-    <input type="text" name="comment" required/>
-    <br><br>
-    <label>Semester: </label>
-    <input type="text" name="semester" required />
-    <br ><br >
-    <button type="submit">Submit Evaluation</button>
-</form>
+<div class="container mt-5 animate__animated animate__fadeInUp">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+
+            <div class="card shadow-lg border-0 rounded-3 border-top border-primary border-5">
+                <div class="card-header bg-white py-3">
+                    <h4 class="mb-0 text-primary"><i class="fas fa-gavel me-2"></i>Evaluate Employee</h4>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <!-- Feedback Messages -->
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-success shadow-sm"><i class="fas fa-check-circle me-2"></i>@TempData["Message"]</div>
+                    }
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger shadow-sm"><i class="fas fa-exclamation-triangle me-2"></i>@TempData["Error"]</div>
+                    }
+
+                    <form action="/Employee/EvaluateEmployee" method="post">
+
+                        <!-- Target Employee -->
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-secondary">Target Employee ID</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light"><i class="fas fa-user"></i></span>
+                                <input type="number" name="EmpId" class="form-control" placeholder="Enter ID" required />
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <!-- Semester -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-secondary">Semester</label>
+                                <input type="text" name="semester" class="form-control" placeholder="e.g. W23" required maxlength="3" />
+                            </div>
+
+                            <!-- Rating -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold text-secondary">Rating (1-5)</label>
+                                <input type="number" name="rating" class="form-control" min="1" max="5" required />
+                            </div>
+                        </div>
+
+                        <!-- Comment -->
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-secondary">Performance Comments</label>
+                            <textarea name="comment" class="form-control" rows="3" placeholder="Enter detailed feedback..." required></textarea>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg shadow-sm">
+                                <i class="fas fa-save me-2"></i>Submit Evaluation
+                            </button>
+                            <a href="/Employee/Index" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="card-footer bg-light text-muted text-center small py-3">
+                    Note: Only Deans are authorized to perform evaluations.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

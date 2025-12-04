@@ -1,17 +1,52 @@
-﻿<h2>Last Month Payroll</h2>
-<a href="/Employee/Index">Back</a>
+﻿@model IEnumerable<Uni_HR_Management_System.Models.Payroll>
 
-<table border="1">
-    <thead><tr><th>Amount</th><th>Bonus</th><th>Deductions</th><th>Payment Date</th></tr></thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.FinalSalaryAmount</td>
-                <td>@item.BonusAmount</td>
-                <td>@item.DeductionsAmount</td>
-                <td>@item.PaymentDate</td>
-            </tr>
-        }
-    </tbody>
-</table>
+@{
+    ViewData["Title"] = "My Payroll";
+}
+
+<div class="container py-4 animate__animated animate__fadeIn">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-success fw-bold"><i class="fas fa-file-invoice-dollar me-2"></i>Last Month Payroll</h2>
+        <a href="/Employee/Index" class="btn btn-secondary shadow-sm">Back</a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info shadow-sm">
+            <i class="fas fa-info-circle me-2"></i> No payroll records found for the last month.
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="card shadow border-0 h-100 border-top border-success border-4">
+                        <div class="card-header bg-white text-center py-3">
+                            <h5 class="mb-0 text-muted">Payment Date</h5>
+                            <div class="fw-bold text-dark">@item.PaymentDate?.ToString("MMMM dd, yyyy")</div>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-gift text-warning me-2"></i> Bonus</span>
+                                    <span class="text-success fw-bold">+@item.BonusAmount?.ToString("C")</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <span><i class="fas fa-minus-circle text-danger me-2"></i> Deductions</span>
+                                    <span class="text-danger fw-bold">-@item.DeductionsAmount?.ToString("C")</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center bg-light mt-2 rounded">
+                                    <span class="fw-bold text-dark">Net Salary</span>
+                                    <span class="h5 mb-0 text-success fw-bold">@item.FinalSalaryAmount?.ToString("C")</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

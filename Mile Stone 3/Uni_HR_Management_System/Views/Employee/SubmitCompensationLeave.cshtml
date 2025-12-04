@@ -1,22 +1,58 @@
-﻿<h2>Apply for Compensation Leave</h2>
-<a href="/Employee/Index">Back</a>
+﻿@{
+    ViewData["Title"] = "Apply Compensation Leave";
+}
 
-<form action="/Employee/SubmitCompensationLeave" method="post">
-    <label>Compensation Date:</label>
-    <input type="date" name="compensationDate" required />
-    <br /><br />
+<div class="container mt-5 animate__animated animate__fadeInUp">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-success text-white py-3">
+                    <h4 class="mb-0"><i class="fas fa-gift me-2"></i>Apply for Compensation Leave</h4>
+                </div>
+                <div class="card-body p-4">
 
-    <label>Reason of Leave:</label>
-    <input type="text" name="reason" required />
-    <br /><br />
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger"><i class="fas fa-exclamation-circle me-2"></i>@TempData["Error"]</div>
+                    }
 
-    <label>Date of the Original Working Day:</label>
-    <input type="date" name="dateOfOriginalWorkday" required />
-    <br /><br />
+                    <form action="/Employee/SubmitCompensationLeave" method="post">
 
-    <label>Replacement Employee ID:</label>
-    <input type="number" name="replacementId" required />
-    <br /><br />
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-secondary">Compensation Date (Day Off)</label>
+                            <input type="date" name="compDate" class="form-control" required />
+                            <div class="form-text">Select the day you want to take off.</div>
+                        </div>
 
-    <button type="submit">Submit Request</button>
-</form>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-secondary">Original Work Date</label>
+                            <input type="date" name="originalDate" class="form-control" required />
+                            <div class="form-text">The weekend/holiday you worked extra.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold text-secondary">Reason</label>
+                            <textarea name="reason" class="form-control" rows="2" required placeholder="e.g. Worked on Saturday for Project X"></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold text-secondary">Replacement Employee ID</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light"><i class="fas fa-user-friends"></i></span>
+                                <input type="number" name="replacementId" class="form-control" placeholder="Enter ID" required />
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg shadow-sm">
+                                <i class="fas fa-paper-plane me-2"></i>Submit Request
+                            </button>
+                            <a href="/Employee/Index" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
