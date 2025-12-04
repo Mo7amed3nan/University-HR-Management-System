@@ -1,6 +1,8 @@
 ﻿USE University_HR_ManagementSystem_5;
 go
 
+
+ 
 ------
 insert into Department (name,building_location)
 values ('MET','C building')
