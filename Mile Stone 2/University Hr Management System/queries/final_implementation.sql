@@ -335,7 +335,7 @@ DROP PROC Submit_Medical;
 DROP PROC Submit_Unpaid;
 DROP PROC Upperboard_approve_unpaids;
 DROP PROC Submit_compensation;
-DROP PROC DeanandHR_Evaluation;
+DROP PROC Dean_andHR_Evaluation;
 DROP PROC Medical_approval;
 GO
 
@@ -448,6 +448,16 @@ to_date date
 );
 GO
 
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Holiday' AND xtype='U')
+BEGIN
+    CREATE TABLE Holiday (
+        holiday_id INT PRIMARY KEY IDENTITY(1,1),
+        holiday_name VARCHAR(50),
+        from_date DATE,
+        to_date DATE
+    );
+END
+go
 
 CREATE OR ALTER PROCEDURE Add_Holiday
     @holiday_name VARCHAR(50),
@@ -2173,3 +2183,6 @@ AS
 GO
 
 
+select employee.employee_id, employee.password
+from employee inner join Employee_Role on employee.employee_id=Employee_Role.emp_ID
+where role_name='Dean'

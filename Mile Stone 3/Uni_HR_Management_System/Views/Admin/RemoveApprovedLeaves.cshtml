@@ -1,8 +1,25 @@
-﻿<h2>Remove Approved Leaves from Attendance</h2>
-<form asp-action="RemoveApprovedLeaves" method="post">
-    <div class="mb-3">
-        <label>Employee ID:</label>
-        <input type="number" name="empId" class="form-control" required />
+﻿<h2>Remove Approved Leaves for Attendance</h2>
+
+<div class="container animate__animated animate__fadeInUp">
+    <div class="card border-0 border-top border-4 border-danger mt-5" style="max-width: 600px; margin:auto">
+        <div class="card-header bg-white py-3">
+            <h4 class="text-secondary"> Remove approved leaves </h4>
+        </div>
+        <div class="card-body">
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">@TempData["Error"]</div>
+            }
+            <form asp-action="RemoveApprovedLeaves" method="post">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Employee ID:</label>
+                    <input type="number" name="empId" class="form-control" required />
+                </div>
+                <button type="submit" class="btn btn-danger btn-lg shadow-sm w-100">Remove</button>
+            </form>
+        </div>
+        <div class="card-footer bg-white text-center">
+            <a href="/Admin/Index" class="text-decoration-none"> Back to Dashboard </a>
+        </div>
     </div>
-    <button type="submit" class="btn btn-warning">Remove</button>
-</form>
+</div>

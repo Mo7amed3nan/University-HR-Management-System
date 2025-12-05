@@ -25,17 +25,19 @@
         </div>
     </div>
 
-    <!-- Messages -->
+    <!-- FEEDBACK MESSAGES -->
     @if (TempData["Message"] != null)
     {
-        <div class="alert alert-success shadow-sm border-start border-success border-4">
-            <i class="fas fa-check-circle me-2"></i>@TempData["Message"]
+        <div class="alert alert-success alert-dismissible fade show shadow-sm border-start border-success border-4" role="alert">
+            <i class="fas fa-check-circle me-2"></i> @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
     @if (TempData["Error"] != null)
     {
-        <div class="alert alert-danger shadow-sm border-start border-danger border-4">
-            <i class="fas fa-exclamation-triangle me-2"></i>@TempData["Error"]
+        <div class="alert alert-danger alert-dismissible fade show shadow-sm border-start border-danger border-4" role="alert">
+            <i class="fas fa-exclamation-triangle me-2"></i> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
 
