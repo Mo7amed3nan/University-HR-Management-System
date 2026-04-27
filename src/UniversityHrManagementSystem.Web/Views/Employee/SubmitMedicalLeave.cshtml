@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Apply Medical Leave";
+}
+
+<div class="container mt-5 animate__animated animate__fadeInUp">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0 rounded-3 border-top border-danger border-5">
+                <div class="card-header bg-white py-3">
+                    <h4 class="mb-0 text-danger"><i class="fas fa-procedures me-2"></i>Apply for Medical Leave</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/Employee/SubmitMedicalLeave" method="post">
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Start Date</label>
+                                <input type="date" name="start" class="form-control" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">End Date</label>
+                                <input type="date" name="end" class="form-control" required />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Leave Type</label>
+                            <select name="type" class="form-select">
+                                <option value="sick">Sick Leave</option>
+                                <option value="maternity">Maternity Leave</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" name="insurance" value="true" id="insCheck">
+                            <label class="form-check-label" for="insCheck">Covered by Insurance?</label>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Disability / Medical Details</label>
+                            <textarea name="disability" class="form-control" rows="2" placeholder="Describe condition..."></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Document File Name</label>
+                            <input type="text" name="filename" class="form-control" placeholder="e.g. DoctorReport.pdf" required />
+                        </div>
+
+                        <!-- Hidden description field if needed by SQL, or ask user -->
+                        <input type="hidden" name="description" value="Medical Report" />
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-danger btn-lg shadow-sm">
+                                <i class="fas fa-paper-plane me-2"></i>Submit Request
+                            </button>
+                            <a href="/Employee/Index" class="btn btn-outline-secondary">Cancel</a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Uni_HR_Management_System.Models.Leave>
+@{ ViewData["Title"] = "Leave Status"; }
+
+<div class="container py-4 animate__animated animate__fadeIn">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-info fw-bold"><i class="fas fa-list-alt me-2"></i>Leave Status</h2>
+        <a href="/Employee/Index" class="btn btn-secondary shadow-sm">Back</a>
+    </div>
+
+    <div class="card shadow border-0 border-top border-info border-4">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="bg-info text-white">
+                        <tr>
+                            <th>Req ID</th>
+                            <th>Date Requested</th>
+                            <th class="text-center">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="fw-bold">#@item.RequestId</td>
+                                <td>@item.DateOfRequest?.ToString("yyyy-MM-dd")</td>
+                                <td class="text-center">
+                                    @if (item.FinalApprovalStatus?.ToLower() == "approved") {
+                                        <span class="badge bg-success rounded-pill px-3">Approved</span>
+                                    } else if (item.FinalApprovalStatus?.ToLower() == "rejected") {
+                                        <span class="badge bg-danger rounded-pill px-3">Rejected</span>
+                                    } else {
+                                        <span class="badge bg-warning text-dark rounded-pill px-3">Pending</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        @if (!Model.Any()) {
+                            <tr><td colspan="4" class="text-center text-muted py-4">No leave requests found.</td></tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,51 @@
+# Build outputs
+[Bb]in/
+[Oo]bj/
+out/
+
+# User and IDE files
 .vs/
-obj/
-bin/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Core / web tooling
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test & coverage outputs
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# SQL Server / SSDT generated files
+*.dacpac
+*.dbmdl
+*.jfm
 *.cache
+
+# Compiled artifacts
+*.dll
+*.exe
+*.pdb
+
+# Local database/runtime files
+*.mdf
+*.ldf
 *.db
+
+# OS files
+.DS_Store
+Thumbs.db

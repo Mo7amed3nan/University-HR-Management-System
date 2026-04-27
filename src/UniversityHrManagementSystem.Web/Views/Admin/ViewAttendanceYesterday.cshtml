@@ -1,0 +1,47 @@
+﻿@model List<Uni_HR_Management_System.Models.AllEmployeeAttendance>
+
+<div class="container animate__animated animate__fadeIn">
+
+    <div class="d-flex justify-content-between mb-4">
+        <h2>Attendance for Yesterday</h2>
+        <a href="/Admin/Index" class="btn btn-secondary shadow-sm">
+          <i class="fas fa-arrow-left me-2"></i> Back to Dashboard
+          </a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Emp ID</th>
+                    <th>Date</th>
+                    <th>Check In</th>
+                    <th>Check Out</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.AttendanceId</td>
+                        <td>@item.EmpId</td>
+                        <td>@item.Date?.ToShortDateString()</td>
+                        <td>@item.CheckInTime</td>
+                        <td>@item.CheckOutTime</td>
+                        <td>
+                        @if(item.Status == "Attended")
+                        {
+                            <span class="badge bg-success border-success text-success border bg-opacity-10">Attended</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger border-danger text-danger border bg-opacity-10">Absent</span>
+                        }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

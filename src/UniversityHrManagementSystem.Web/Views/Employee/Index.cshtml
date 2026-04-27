@@ -1,0 +1,159 @@
+﻿@{
+    ViewData["Title"] = "Employee Dashboard";
+    var empId = Context.Session.GetInt32("EmpId");
+    var userRole = Context.Session.GetString("Role");
+}
+
+<div class="container-fluid py-4 animate__animated animate__fadeIn">
+    
+    <!-- 1. PROFILE HEADER -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-0">
+                    <div class="row g-0">
+                        <div class="col-md-8 p-4 bg-white rounded-start">
+                            <h2 class="h3 mb-1 text-primary fw-bold"><i class="fas fa-user-graduate me-2"></i>Academic Dashboard</h2>
+                            <p class="text-muted mb-0">Manage your academic profile, leaves, and performance.</p>
+                        </div>
+                        <div class="col-md-4 bg-light p-4 border-start d-flex align-items-center justify-content-between">
+                            <div>
+                                <h6 class="text-uppercase text-secondary small fw-bold mb-1">Logged in as</h6>
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-2" style="width: 40px; height: 40px;">
+                                        <i class="fas fa-id-card"></i>
+                                    </div>
+                                    <div>
+                                        <div class="fw-bold text-dark">Employee #@empId</div>
+                                        <span class="badge bg-info text-dark">@userRole</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="/Account/Logout" class="btn btn-outline-danger btn-sm" title="Logout">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEEDBACK MESSAGES -->
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show shadow-sm border-start border-success border-4" role="alert">
+            <i class="fas fa-check-circle me-2"></i> @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show shadow-sm border-start border-danger border-4" role="alert">
+            <i class="fas fa-exclamation-triangle me-2"></i> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="row g-4">
+        @* 
+        <!-- COLUMN 1: MY INFO -->
+        <div class="col-lg-4">
+            <div class="card shadow-sm h-100 border-top border-info border-4">
+                <div class="card-header bg-white py-3">
+                    <h5 class="mb-0 text-info fw-bold"><i class="fas fa-info-circle me-2"></i>My Information</h5>
+                </div>
+                <div class="list-group list-group-flush">
+                    <a href="/Employee/ViewAttendance" class="list-group-item list-group-item-action py-3 d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-clock text-secondary me-3" style="width:20px"></i> View Attendance</span>
+                        <i class="fas fa-chevron-right text-muted small"></i>
+                    </a>
+                    <a href="/Employee/ViewPayroll" class="list-group-item list-group-item-action py-3 d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-file-invoice-dollar text-success me-3" style="width:20px"></i> Last Month Payroll</span>
+                        <i class="fas fa-chevron-right text-muted small"></i>
+                    </a>
+                    <a href="/Employee/ViewPerformance" class="list-group-item list-group-item-action py-3 d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-chart-line text-primary me-3" style="width:20px"></i> View Performance</span>
+                        <i class="fas fa-chevron-right text-muted small"></i>
+                    </a>
+                    <a href="/Employee/ViewDeductions" class="list-group-item list-group-item-action py-3 d-flex justify-content-between align-items-center">
+                        <span><i class="fas fa-minus-circle text-danger me-3" style="width:20px"></i> View Deductions</span>
+                        <i class="fas fa-chevron-right text-muted small"></i>
+                    </a>
+                </div>
+            </div>
+        </div> *@
+
+        <!-- COLUMN 2: LEAVE MANAGEMENT -->
+        <div class="col-lg-4">
+            <div class="card shadow-sm h-100 border-top border-primary border-4">
+                <div class="card-header bg-white py-3">
+                    <h5 class="mb-0 text-primary fw-bold"><i class="fas fa-paper-plane me-2"></i>Apply for Leave</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <a href="/Employee/SubmitAnnualLeave" class="btn btn-outline-primary w-100 h-100 py-3 d-flex flex-column align-items-center justify-content-center">
+                                <i class="fas fa-calendar-check fa-2x mb-2"></i>
+                                <span class="small fw-bold">Annual</span>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="/Employee/SubmitAccidentalLeave" class="btn btn-outline-warning w-100 h-100 py-3 d-flex flex-column align-items-center justify-content-center">
+                                <i class="fas fa-car-crash fa-2x mb-2"></i>
+                                <span class="small fw-bold">Accidental</span>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="/Employee/SubmitMedicalLeave" class="btn btn-outline-danger w-100 h-100 py-3 d-flex flex-column align-items-center justify-content-center">
+                                <i class="fas fa-procedures fa-2x mb-2"></i>
+                                <span class="small fw-bold">Medical</span>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="/Employee/SubmitCompensationLeave" class="btn btn-outline-success w-100 h-100 py-3 d-flex flex-column align-items-center justify-content-center">
+                                <i class="fas fa-gift fa-2x mb-2"></i>
+                                <span class="small fw-bold">Comp.</span>
+                            </a>
+                        </div>
+                        <div class="col-12 mt-2">
+                            <a href="/Employee/SubmitUnpaidLeave" class="btn btn-light border w-100 py-2 text-start">
+                                <i class="fas fa-wallet text-secondary me-2"></i> Apply for Unpaid Leave
+                            </a>
+                        </div>
+                    </div>
+                    <hr />
+                    <a href="/Employee/ViewLeaveStatus" class="btn btn-primary w-100">
+                        <i class="fas fa-list-alt me-2"></i> View My Leave Status
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMN 3: DEAN ACTIONS (CONDITIONAL) -->
+        <div class="col-lg-4">
+            <div class="card shadow-sm h-100 border-top border-dark border-4 bg-light">
+                <div class="card-header bg-dark text-white py-3">
+                    <h5 class="mb-0 fw-bold"><i class="fas fa-user-tie me-2"></i>Dean / Upper Board</h5>
+                </div>
+                <div class="card-body">
+                    <p class="small text-muted mb-3">
+                        <i class="fas fa-lock me-1"></i> These actions are restricted to authorized personnel only.
+                    </p>
+                    <div class="d-grid gap-3">
+                        <a href="/Employee/ViewPendingAnnualLeave" class="btn btn-white border shadow-sm text-start">
+                            <i class="fas fa-check-double text-success me-2"></i> Approve Annual Leaves
+                        </a>
+                        <a href="/Employee/ViewPendingUnpaidLeave" class="btn btn-white border shadow-sm text-start">
+                            <i class="fas fa-file-signature text-warning me-2"></i> Approve Unpaid Leaves
+                        </a>
+                        <a href="/Employee/EvaluateEmployee" class="btn btn-white border shadow-sm text-start">
+                            <i class="fas fa-gavel text-primary me-2"></i> Evaluate Employee
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
