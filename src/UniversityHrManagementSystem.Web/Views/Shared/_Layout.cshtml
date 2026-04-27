@@ -6,6 +6,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0b1220" />
     <title>@ViewData["Title"] - University HR</title>
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
@@ -13,100 +15,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- Animate.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <style>
-        body {
-            background-color: #f4f6f9;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* Keep original d-flex layout but add smooth collapsing */
-        .app-shell {
-            display: flex;
-            align-items: stretch;
-            min-height: 100vh;
-        }
-
-        /* SIDEBAR */
-        .sidebar {
-            flex: 0 0 250px;
-            width: 250px;
-            min-height: 100vh;
-            background: linear-gradient(180deg, #343a40 0%, #212529 100%);
-            color: #fff;
-            transition: all 0.25s ease;
-            overflow: hidden;
-        }
-
-            /* Collapsed state: hide content but keep animation */
-            .sidebar.collapsed {
-                flex: 0 0 0;
-                width: 0;
-                min-width: 0;
-                padding: 0;
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            .sidebar .nav-link {
-                color: rgba(255,255,255,.8);
-                padding: 15px 20px;
-                border-left: 4px solid transparent;
-                transition: 0.3s;
-                white-space: nowrap;
-            }
-
-                .sidebar .nav-link:hover, .sidebar .nav-link.active {
-                    color: #fff;
-                    background-color: rgba(255,255,255,0.1);
-                    border-left-color: #0d6efd;
-                }
-
-                .sidebar .nav-link i {
-                    width: 25px;
-                    text-align: center;
-                    margin-right: 10px;
-                }
-
-        .sidebar-header {
-            padding: 20px;
-            background-color: rgba(0,0,0,0.2);
-            text-align: center;
-        }
-
-        .content-wrapper {
-            flex: 1 1 auto;
-            padding: 20px;
-            transition: margin-left .25s ease;
-            width: 100%;
-        }
-
-        .sidebar.collapsed + .content-wrapper {
-
-        }
-
-        .collapse-menu .nav-link {
-            padding-left: 50px;
-            font-size: 0.9em;
-        }
-
-
-        #sidebarToggle {
-            min-width: 42px;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/UniversityHrManagementSystem.Web.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body class="app-shell-body">
     @{
-        var userRole = HttpContextAccessor.HttpContext.Session.GetString("Role");
+        var userRole = HttpContextAccessor.HttpContext?.Session.GetString("Role");
+        var roleLabel = string.IsNullOrWhiteSpace(userRole) ? "Guest" : userRole;
+        var pageTitle = ViewData["Title"]?.ToString() ?? "Dashboard";
     }
 
     <div class="app-shell">
 
         <nav id="leftSidebar" class="sidebar">
             <div class="sidebar-header">
-                <h4><i class="fas fa-university me-2"></i>Uni HR</h4>
-                <small class="text-light">@userRole Panel</small>
+                <div class="sidebar-brand">
+                    <span class="sidebar-brand__mark"><i class="fas fa-university"></i></span>
+                    <div>
+                        <div class="sidebar-brand__title">Uni HR</div>
+                        <div class="sidebar-brand__subtitle">Management Console</div>
+                    </div>
+                </div>
+                <span class="sidebar-role-badge">@roleLabel Panel</span>
             </div>
 
             <ul class="nav flex-column mt-3">
@@ -221,7 +154,7 @@
                 }
 
                 <li class="nav-item mt-5">
-                    <a class="nav-link text-danger" href="/Account/Logout">
+                    <a class="nav-link nav-link--logout" href="/Account/Logout">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                 </li>
@@ -230,15 +163,18 @@
 
         <!-- MAIN CONTENT -->
         <div class="content-wrapper">
-            <div class="d-flex align-items-center mb-3">
-                <button id="sidebarToggle" class="btn btn-outline-secondary me-2" type="button" aria-pressed="false" aria-controls="leftSidebar" title="Toggle menu">
+            <div class="page-toolbar">
+                <button id="sidebarToggle" class="btn btn-shell" type="button" aria-pressed="false" aria-controls="leftSidebar" title="Toggle menu">
                     <i class="fas fa-bars"></i>
                 </button>
 
-                <h1 class="h5 mb-0">@ViewData["Title"]</h1>
+                <div class="page-heading">
+                    <p class="page-heading__eyebrow">University HR</p>
+                    <h1 class="page-heading__title">@pageTitle</h1>
+                </div>
             </div>
 
-            <main role="main" class="animate__animated animate__fadeIn">
+            <main role="main" class="content-surface animate__animated animate__fadeIn">
                 @RenderBody()
             </main>
         </div>
