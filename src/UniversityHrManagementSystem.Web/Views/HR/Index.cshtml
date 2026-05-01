@@ -1,87 +1,157 @@
-﻿@{
+@{
     ViewData["Title"] = "HR Dashboard";
     var empId = Context.Session.GetInt32("EmpId");
 }
 
-<div class="container-fluid py-4 animate__animated animate__fadeIn">
+<style>
+    .welcome-banner {
+        background: linear-gradient(135deg, rgba(210, 153, 34, 0.1), rgba(210, 153, 34, 0.02));
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .section-title::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background-color: var(--border-color);
+    }
+    
+    .action-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1rem;
+    }
+    
+    .action-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+        background-color: var(--bg-base);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: all var(--transition-fast);
+    }
+    
+    .action-item:hover {
+        background-color: var(--bg-surface-hover);
+        border-color: var(--warning);
+        color: var(--text-primary);
+        transform: translateY(-2px);
+    }
+    
+    .action-item__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-sm);
+        background-color: rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        transition: color var(--transition-fast);
+    }
+    
+    .action-item:hover .action-item__icon {
+        color: var(--warning);
+        background-color: rgba(210, 153, 34, 0.1);
+    }
 
-    <!-- Header -->
-    <div class="row mb-4">
-        <div class="col-12">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-4 d-flex justify-content-between align-items-center">
-                    <div>
-                        <h2 class="h3 mb-1 text-primary fw-bold"><i class="fas fa-user-tie me-2"></i>HR Management</h2>
-                        <p class="text-muted mb-0">Payroll processing and leave approval center.</p>
-                    </div>
-                    <div class="text-end">
-                        <div class="fw-bold text-dark">HR ID: #@empId</div>
-                        <a href="/Account/Logout" class="btn btn-outline-danger btn-sm mt-1">
-                            <i class="fas fa-sign-out-alt me-1"></i>Logout
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    /* Success styles for specific items */
+    .action-item.success:hover { border-color: var(--success); }
+    .action-item.success:hover .action-item__icon { color: var(--success); background-color: rgba(46, 160, 67, 0.1); }
+    
+    /* Danger styles for specific items */
+    .action-item.danger:hover { border-color: var(--danger); }
+    .action-item.danger:hover .action-item__icon { color: var(--danger); background-color: rgba(248, 81, 73, 0.1); }
+    
+    .action-item__text {
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+</style>
+
+<div class="container-fluid animate__animated animate__fadeIn">
 
     <!-- FEEDBACK MESSAGES -->
     @if (TempData["Message"] != null)
     {
-        <div class="alert alert-success alert-dismissible fade show shadow-sm border-start border-success border-4" role="alert">
+        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
             <i class="fas fa-check-circle me-2"></i> @TempData["Message"]
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
     @if (TempData["Error"] != null)
     {
-        <div class="alert alert-danger alert-dismissible fade show shadow-sm border-start border-danger border-4" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
             <i class="fas fa-exclamation-triangle me-2"></i> @TempData["Error"]
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
 
-    <div class="row g-4">
-        <!-- Leave Management -->
-        <div class="col-md-6">
-            <div class="card shadow-sm h-100 border-top border-info border-4">
-                <div class="card-header bg-white py-3">
-                    <h5 class="mb-0 text-info fw-bold"><i class="fas fa-clipboard-check me-2"></i>Leave Approvals</h5>
-                </div>
-                <div class="list-group list-group-flush">
-                    <a href="/HR/ProcessAnnualAccidentalLeaves" class="list-group-item list-group-item-action py-3 d-flex justify-content-between align-items-center">
-                        <span><i class="fas fa-calendar-check text-primary me-3"></i> Annual & Accidental Leaves</span>
-                        <i class="fas fa-chevron-right text-muted small"></i>
-                    </a>
-                    <a href="/HR/ProcessUnpaidLeaves" class="list-group-item list-group-item-action py-3 d-flex justify-content-between align-items-center">
-                        <span><i class="fas fa-wallet text-warning me-3"></i> Unpaid Leaves</span>
-                        <i class="fas fa-chevron-right text-muted small"></i>
-                    </a>
-                    <a href="/HR/ProcessCompensationLeaves" class="list-group-item list-group-item-action py-3 d-flex justify-content-between align-items-center">
-                        <span><i class="fas fa-gift text-success me-3"></i> Compensation Leaves</span>
-                        <i class="fas fa-chevron-right text-muted small"></i>
-                    </a>
-                </div>
+    <!-- PROFILE HEADER -->
+    <div class="welcome-banner">
+        <div class="d-flex align-items-center">
+            <div class="me-4" style="color: var(--warning);">
+                <i class="fas fa-user-tie fa-3x"></i>
             </div>
-        </div>
-
-        <!-- Financials -->
-        <div class="col-md-6">
-            <div class="card shadow-sm h-100 border-top border-success border-4">
-                <div class="card-header bg-white py-3">
-                    <h5 class="mb-0 text-success fw-bold"><i class="fas fa-money-bill-wave me-2"></i>Payroll & Deductions</h5>
-                </div>
-                <div class="card-body">
-                    <div class="d-grid gap-3">
-                        <a href="/HR/ApplyDeduction" class="btn btn-outline-danger py-3 text-start shadow-sm">
-                            <i class="fas fa-minus-circle fa-lg me-2"></i> Apply Deduction (Hours/Days)
-                        </a>
-                        <a href="/HR/GeneratePayroll" class="btn btn-success py-3 text-start shadow-sm text-white">
-                            <i class="fas fa-file-invoice-dollar fa-lg me-2"></i> Generate Monthly Payroll
-                        </a>
-                    </div>
+            <div>
+                <h2 class="mb-2" style="font-weight: 700;">HR Management Center</h2>
+                <div style="color: var(--text-secondary); font-size: 0.95rem;">
+                    <span><i class="fas fa-id-card me-1"></i> HR ID: <strong class="text-white">#@empId</strong></span>
+                    <span class="mx-3 text-muted">|</span>
+                    <span><i class="fas fa-user-tag me-1"></i> Role: <strong class="text-white">Human Resources</strong></span>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- LEAVE APPROVALS -->
+    <h3 class="section-title"><i class="fas fa-clipboard-check text-warning"></i> Leave Approvals</h3>
+    <div class="action-grid mb-5">
+        <a href="/HR/ProcessAnnualAccidentalLeaves" class="action-item success">
+            <div class="action-item__icon"><i class="fas fa-calendar-check"></i></div>
+            <span class="action-item__text">Annual & Accidental</span>
+        </a>
+        <a href="/HR/ProcessUnpaidLeaves" class="action-item warning">
+            <div class="action-item__icon"><i class="fas fa-wallet"></i></div>
+            <span class="action-item__text">Unpaid Leaves</span>
+        </a>
+        <a href="/HR/ProcessCompensationLeaves" class="action-item info">
+            <div class="action-item__icon"><i class="fas fa-gift"></i></div>
+            <span class="action-item__text">Compensation Leaves</span>
+        </a>
+    </div>
+
+    <!-- PAYROLL & DEDUCTIONS -->
+    <h3 class="section-title"><i class="fas fa-money-bill-wave text-success"></i> Payroll & Deductions</h3>
+    <div class="action-grid mb-4">
+        <a href="/HR/ApplyDeduction" class="action-item danger">
+            <div class="action-item__icon"><i class="fas fa-minus-circle"></i></div>
+            <span class="action-item__text">Apply Deduction</span>
+        </a>
+        <a href="/HR/GeneratePayroll" class="action-item success">
+            <div class="action-item__icon"><i class="fas fa-file-invoice-dollar"></i></div>
+            <span class="action-item__text">Generate Monthly Payroll</span>
+        </a>
+    </div>
+
 </div>

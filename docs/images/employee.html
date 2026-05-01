@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Dashboard Preview</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg-base: #0a0e17; 
+            --bg-surface: rgba(18, 26, 43, 0.7);
+            --bg-sidebar: rgba(13, 19, 30, 0.95);
+            --border-color: rgba(0, 210, 255, 0.15);
+            --text-primary: #f0f4f8;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-color: #00d2ff;
+            --accent-transparent: rgba(0, 210, 255, 0.15);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --info: #3b82f6;
+            --font-family: 'Inter', system-ui, sans-serif;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.4);
+            --radius-sm: 8px;
+            --radius-md: 12px; 
+        }
+        body { background-color: #0a0e17; color: var(--text-primary); font-family: var(--font-family); margin: 0; padding: 0; background-image: radial-gradient(circle at top, rgba(0, 210, 255, 0.05), transparent 40%); }
+        .app-shell { display: flex; width: 100%; height: 100vh; }
+        .sidebar { width: 260px; background: var(--bg-sidebar); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; backdrop-filter: blur(10px); }
+        .sidebar-header { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; border-bottom: 1px solid var(--border-color); }
+        .sidebar-brand { display: flex; align-items: center; gap: 0.75rem; }
+        .sidebar-brand__mark { color: var(--accent-color); width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); font-size: 1.25rem; background: var(--accent-transparent); border: 1px solid rgba(0, 210, 255, 0.3); }
+        .sidebar-brand__title { font-weight: 700; font-size: 1.1rem; color: var(--text-primary); }
+        .sidebar-role-badge { background-color: rgba(255, 255, 255, 0.05); color: var(--text-secondary); padding: 0.25rem 0.75rem; border-radius: 4px; border: 1px solid var(--border-color); font-size: 0.75rem; font-weight: 600; align-self: flex-start; }
+        .sidebar .nav { padding: 1rem 0.5rem; display: flex; flex-direction: column; gap: 0.25rem; }
+        .sidebar .nav-link { color: var(--text-secondary); padding: 0.75rem 1rem; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 0.75rem; font-weight: 500; text-decoration: none; font-size: 0.9rem; }
+        .sidebar .nav-link.active { background-color: var(--accent-transparent); color: var(--accent-color); }
+        .content-wrapper { flex: 1; margin-left: 260px; display: flex; flex-direction: column; height: 100vh; }
+        .page-toolbar { padding: 1.25rem 2rem; border-bottom: 1px solid var(--border-color); background: rgba(10, 14, 23, 0.8); }
+        .page-heading__eyebrow { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin: 0 0 0.25rem 0; font-weight: 600; }
+        .page-heading__title { font-size: 1.3rem; font-weight: 600; margin: 0; color: var(--text-primary); }
+        .content-surface { padding: 2rem; flex: 1; }
+        .welcome-banner { background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0)); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem 2rem; margin-bottom: 2rem; display: flex; align-items: center; }
+        .section-title { font-size: 1rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+        .section-title::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border-color), transparent); }
+        .action-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+        .action-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-primary); text-decoration: none; }
+        .action-item__icon { width: 40px; height: 40px; border-radius: var(--radius-sm); background: rgba(0,0,0,0.3); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--text-secondary); }
+        .action-item__text { font-weight: 500; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <div class="app-shell">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-brand">
+                    <div class="sidebar-brand__mark"><i class="fas fa-university"></i></div>
+                    <div class="sidebar-brand__title">Uni HR</div>
+                </div>
+                <div class="sidebar-role-badge">Academic Staff</div>
+            </div>
+            <div class="nav">
+                <a class="nav-link active"><i class="fas fa-user-graduate" style="width: 20px;"></i> My Dashboard</a>
+                <a class="nav-link"><i class="fas fa-clock" style="width: 20px;"></i> Attendance</a>
+                <a class="nav-link"><i class="fas fa-paper-plane" style="width: 20px;"></i> Leave Requests</a>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="page-toolbar">
+                <div>
+                    <p class="page-heading__eyebrow">Personal Portal</p>
+                    <h1 class="page-heading__title">Academic Dashboard</h1>
+                </div>
+            </div>
+            <div class="content-surface">
+                <div class="welcome-banner">
+                    <i class="fas fa-user-graduate fa-2x" style="color: var(--info); margin-right: 1.5rem;"></i>
+                    <div>
+                        <h3 style="margin: 0 0 0.25rem 0; font-size: 1.2rem;">Welcome, Dr. Ahmed Ali</h3>
+                        <div style="color: var(--text-secondary); font-size: 0.85rem;">ID: #1001 <span style="margin: 0 0.5rem; color: var(--border-color);">|</span> Role: Professor</div>
+                    </div>
+                </div>
+
+                <h3 class="section-title"><i class="fas fa-paper-plane text-info"></i> Apply for Leave</h3>
+                <div class="action-grid">
+                    <a class="action-item"><div class="action-item__icon"><i class="fas fa-calendar-check" style="color: var(--success);"></i></div><span class="action-item__text">Annual Leave</span></a>
+                    <a class="action-item"><div class="action-item__icon"><i class="fas fa-car-crash" style="color: var(--warning);"></i></div><span class="action-item__text">Accidental Leave</span></a>
+                    <a class="action-item"><div class="action-item__icon"><i class="fas fa-procedures" style="color: var(--danger);"></i></div><span class="action-item__text">Medical Leave</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

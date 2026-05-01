@@ -1,132 +1,199 @@
-﻿@{
+@{
     ViewData["Title"] = "Admin Dashboard";
-    // Retrieve role from session to display
     var userRole = Context.Session.GetString("Role") ?? "Admin";
-    // Since Admin ID is hardcoded, we can display a generic ID or email
     var adminEmail = "admin@guc.edu.eg";
 }
 
-<div class="container-fluid animate__animated animate__fadeIn">
+<style>
+    .welcome-banner {
+        background: linear-gradient(135deg, rgba(46, 160, 67, 0.1), rgba(46, 160, 67, 0.02));
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .section-title::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background-color: var(--border-color);
+    }
+    
+    .action-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1rem;
+    }
+    
+    .action-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+        background-color: var(--bg-base);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-sm);
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: all var(--transition-fast);
+    }
+    
+    .action-item:hover {
+        background-color: var(--bg-surface-hover);
+        border-color: var(--accent-color);
+        color: var(--text-primary);
+        transform: translateY(-2px);
+    }
+    
+    .action-item__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-sm);
+        background-color: rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        transition: color var(--transition-fast);
+    }
+    
+    .action-item:hover .action-item__icon {
+        color: var(--accent-color);
+        background-color: var(--accent-transparent);
+    }
+    
+    .action-item.danger:hover .action-item__icon {
+        color: var(--danger);
+        background-color: rgba(248, 81, 73, 0.1);
+    }
+    .action-item.danger:hover {
+        border-color: var(--danger);
+    }
+    
+    .action-item__text {
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+    
+    .daily-op-panel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem;
+        background-color: rgba(210, 153, 34, 0.05);
+        border-left: 4px solid var(--warning);
+        border-radius: var(--radius-sm);
+        margin-bottom: 3rem;
+    }
+</style>
 
-    <!-- Header Section -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <div>
-            <h1 class="h3 mb-0 text-gray-800">Admin Dashboard</h1>
-            <p class="text-muted">System Overview & Controls</p>
-        </div>
-        <a href="/Account/Logout" class="btn btn-outline-danger shadow-sm">
-            <i class="fas fa-sign-out-alt me-2"></i>Logout
-        </a>
-    </div>
+<div class="container-fluid animate__animated animate__fadeIn">
 
     <!-- FEEDBACK MESSAGES -->
     @if (TempData["Message"] != null)
     {
-        <div class="alert alert-success alert-dismissible fade show shadow-sm border-start border-success border-4" role="alert">
+        <div class="alert alert-success alert-dismissible fade show mb-4" role="alert">
             <i class="fas fa-check-circle me-2"></i> @TempData["Message"]
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
     @if (TempData["Error"] != null)
     {
-        <div class="alert alert-danger alert-dismissible fade show shadow-sm border-start border-danger border-4" role="alert">
+        <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
             <i class="fas fa-exclamation-triangle me-2"></i> @TempData["Error"]
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
 
-    <!-- Admin Profile Card -->
-    <div class="row mb-4">
-        <div class="col-md-12">
-            <div class="card shadow-sm border-0 border-start border-primary border-4">
-                <div class="card-body">
-                    <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle text-primary">
-                                <i class="fas fa-user-shield fa-2x"></i>
-                            </div>
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-1">Welcome, System Administrator</h5>
-                            <div class="text-muted small">
-                                <i class="fas fa-envelope me-1"></i> @adminEmail
-                                <span class="mx-2">|</span>
-                                <i class="fas fa-id-badge me-1"></i> Role: <strong>@userRole</strong>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Welcome Banner (No Card) -->
+    <div class="welcome-banner">
+        <div class="d-flex align-items-center">
+            <div class="me-4" style="color: var(--accent-color);">
+                <i class="fas fa-user-shield fa-3x"></i>
+            </div>
+            <div>
+                <h2 class="mb-2" style="font-weight: 700;">Welcome, System Administrator</h2>
+                <div style="color: var(--text-secondary); font-size: 0.95rem;">
+                    <span><i class="fas fa-envelope me-1"></i> @adminEmail</span>
+                    <span class="mx-3 text-muted">|</span>
+                    <span><i class="fas fa-id-badge me-1"></i> Role: <strong class="text-white">@userRole</strong></span>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <!-- Daily Operations (Prominent Row, not a box) -->
+    <h3 class="section-title"><i class="fas fa-calendar-day text-warning"></i> Daily Operations</h3>
+    <div class="daily-op-panel">
+        <div>
+            <h5 class="text-warning mb-1" style="font-weight: 600;">Initiate Attendance</h5>
+            <p class="text-muted mb-0" style="font-size: 0.9rem;">Perform this action at the start of every work day to calculate attendance and deductions.</p>
+        </div>
+        <form action="/Admin/StartDay" method="post" class="m-0">
+            <button type="submit" class="btn" style="background-color: var(--warning); color: #000; font-weight: bold; padding: 0.75rem 1.5rem;">
+                <i class="fas fa-play me-2"></i> Start New Day
+            </button>
+        </form>
+    </div>
+
+    <!-- System Management Grid (Sleek List/Grid instead of cards) -->
+    <h3 class="section-title"><i class="fas fa-sliders-h text-primary"></i> System Management</h3>
+    
+    <div class="action-grid mb-5">
+        <a href="/Admin/AddHoliday" class="action-item">
+            <div class="action-item__icon"><i class="fas fa-umbrella-beach"></i></div>
+            <span class="action-item__text">Add Holiday</span>
+        </a>
         
-
-        <!-- Actions Column -->
-        <div class="col-lg-6 mb-4">
-            <!-- Critical Daily Actions -->
-            <div class="card shadow-sm mb-4 border-start border-warning border-4">
-                <div class="card-body">
-                    <h5 class="card-title text-warning"><i class="fas fa-exclamation-triangle me-2"></i>Daily Operations</h5>
-                    <p class="card-text text-muted small">Perform these actions at the start of every work day.</p>
-
-                    <form action="/Admin/StartDay" method="post" class="mb-2">
-                        <button type="submit" class="btn btn-warning w-100 text-dark fw-bold">
-                            <i class="fas fa-play me-2"></i> Start New Day (Initiate Attendance)
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Management Actions -->
-            <div class="card shadow-sm">
-                <div class="card-header bg-white py-3">
-                    <h5 class="m-0 font-weight-bold text-success"><i class="fas fa-cogs me-2"></i>System Management</h5>
-                </div>
-                <div class="card-body">
-                    <div class="row g-2">
-                        <div class="col-md-6">
-                            <a href="/Admin/AddHoliday" class="btn btn-outline-success w-100 text-start">
-                                <i class="fas fa-umbrella-beach me-2"></i> Add Holiday
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="/Admin/UpdateAttendance" class="btn btn-outline-primary w-100 text-start">
-                                <i class="fas fa-user-clock me-2"></i> Update Attendance
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="/Admin/ReplaceEmployee" class="btn btn-outline-secondary w-100 text-start">
-                                <i class="fas fa-exchange-alt me-2"></i> Replace Employee
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="/Admin/UpdateStatus" class="btn btn-outline-secondary w-100 text-start">
-                                <i class="fas fa-sync-alt me-2"></i> Update Status
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="/Admin/RemoveDayOff" class="btn btn-outline-danger w-100 text-start">
-                                <i class="fas fa-eraser me-2"></i> Clean Day-Offs
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                            <a href="/Admin/RemoveApprovedLeaves" class="btn btn-outline-danger w-100 text-start">
-                                <i class="fas fa-trash-alt me-2"></i> Clean Leaves
-                            </a>
-                        </div>
-
-                        <div class="col-12 mt-2">
-                            <form action="/Admin/ClearResignedDeductions" method="post">
-                                <button type="submit" class="btn btn-danger w-100 text-start">
-                                    <i class="fas fa-user-slash me-2"></i> Clear Resigned Deductions
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <a href="/Admin/UpdateAttendance" class="action-item">
+            <div class="action-item__icon"><i class="fas fa-user-clock"></i></div>
+            <span class="action-item__text">Update Attendance</span>
+        </a>
+        
+        <a href="/Admin/ReplaceEmployee" class="action-item">
+            <div class="action-item__icon"><i class="fas fa-exchange-alt"></i></div>
+            <span class="action-item__text">Replace Employee</span>
+        </a>
+        
+        <a href="/Admin/UpdateStatus" class="action-item">
+            <div class="action-item__icon"><i class="fas fa-sync-alt"></i></div>
+            <span class="action-item__text">Update Status</span>
+        </a>
     </div>
+
+    <!-- Danger Zone -->
+    <h3 class="section-title"><i class="fas fa-exclamation-circle text-danger"></i> Cleanup & Reset</h3>
+    <div class="action-grid">
+        <a href="/Admin/RemoveDayOff" class="action-item danger">
+            <div class="action-item__icon"><i class="fas fa-eraser"></i></div>
+            <span class="action-item__text">Clean Day-Offs</span>
+        </a>
+        
+        <a href="/Admin/RemoveApprovedLeaves" class="action-item danger">
+            <div class="action-item__icon"><i class="fas fa-trash-alt"></i></div>
+            <span class="action-item__text">Clean Leaves</span>
+        </a>
+
+        <form action="/Admin/ClearResignedDeductions" method="post" style="display: contents;">
+            <button type="submit" class="action-item danger" style="text-align: left; cursor: pointer; width: 100%;">
+                <div class="action-item__icon"><i class="fas fa-user-slash"></i></div>
+                <span class="action-item__text">Clear Resigned Deductions</span>
+            </button>
+        </form>
+    </div>
+
 </div>

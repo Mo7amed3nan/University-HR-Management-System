@@ -1,6 +1,5 @@
-﻿@{
+@{
     ViewData["Title"] = "Login";
-
     Layout = null;
 }
 <!DOCTYPE html>
@@ -9,134 +8,139 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#0b1220" />
+    <meta name="theme-color" content="#121212" />
     <title>
-        @ViewData["Title"] -
-        University HR System
+        @ViewData["Title"] - University HR System
     </title>
 
-    <!-- Bootstrap CSS (Ensure this link is correct or use your local lib) -->
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
-    <!-- Font Awesome for Icons (Optional but recommended) -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Custom CSS Modules -->
+    <link rel="stylesheet" href="~/css/variables.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components.css" asp-append-version="true" />
 
     <style>
         body {
             margin: 0;
             min-height: 100vh;
             display: flex;
-            align-items: center; /* Vertical center */
-            justify-content: center; /* Horizontal center */
+            align-items: center;
+            justify-content: center;
             padding: 24px;
-            background:
-                radial-gradient(circle at top left, rgba(255, 255, 255, 0.05), transparent 32%),
-                radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.03), transparent 26%),
-                linear-gradient(180deg, #07080b 0%, #0c0d11 52%, #08090c 100%);
-            font-family: 'Manrope', 'Segoe UI', sans-serif;
+            background-color: var(--bg-base);
+            font-family: var(--font-family);
+            color: var(--text-primary);
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 400px;
         }
 
         .login-card {
-            width: 100%;
-            max-width: 440px; /* Limit width on large screens */
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 26px; /* Rounded corners */
-            background: rgba(21, 22, 27, 0.95);
-            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.42);
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
             overflow: hidden;
+            position: relative;
+        }
+        
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--accent-color);
         }
 
         .login-card__header {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
-            color: white;
             text-align: center;
-            padding: 28px 24px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2rem 2rem 1rem;
+        }
+        
+        .brand-icon {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         .login-card__header h3 {
-            letter-spacing: -0.03em;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-size: 1.5rem;
         }
 
-        .login-card__header small {
-            color: #a3a3a3;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
+        .login-card__header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
         }
 
         .login-card__body {
-            padding: 28px 24px 24px;
+            padding: 0 2rem 2rem;
         }
 
-        .login-card__footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .input-group-text {
-            background: rgba(26, 27, 33, 0.95);
-            color: #d1d5db;
-            border-color: rgba(255, 255, 255, 0.08);
-        }
-
-        .form-control:focus {
-            box-shadow: 0 0 0 0.2rem rgba(229, 231, 235, 0.16);
-            border-color: #e5e7eb;
+        .btn-login {
+            padding: 0.6rem;
+            font-weight: 600;
+            width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <div class="card login-card shadow-lg">
-
-        <div class="login-card__header">
-            <h3 class="mb-0"><i class="fas fa-university me-2"></i>Login</h3>
-            <small>University HR System</small>
-        </div>
-
-        <div class="login-card__body">
-
-            @if (ViewBag.Error != null)
-            {
-
-                <div class="alert alert-danger text-center" role="alert">
-                    <i class="fas fa-exclamation-circle me-1"></i> @ViewBag.Error
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="login-card__header">
+                <div class="brand-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <h3>Welcome Back</h3>
+                <p>Sign in to University HR System</p>
             </div>
-            }
 
-            <form asp-action="Login" method="post">
+            <div class="login-card__body">
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger d-flex align-items-center mb-3" role="alert">
+                        <i class="fas fa-exclamation-triangle me-2"></i> 
+                        <div>@ViewBag.Error</div>
+                    </div>
+                }
 
-                <!-- User ID Input -->
-                <div class="mb-3">
-                    <label class="form-label fw-bold">User ID / Email</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <form asp-action="Login" method="post">
+                    <!-- User ID Input -->
+                    <div class="mb-3">
+                        <label class="form-label">User ID / Email</label>
                         <input type="text" name="userName" class="form-control" placeholder="Enter ID or Admin Email" required autofocus />
                     </div>
-                </div>
 
-                <!-- Password Input -->
-                <div class="mb-4">
-                    <label class="form-label fw-bold">Password</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                    <!-- Password Input -->
+                    <div class="mb-4">
+                        <label class="form-label">Password</label>
                         <input type="password" name="password" class="form-control" placeholder="Enter Password" required />
                     </div>
-                </div>
 
-                <!-- Submit Button -->
-                <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
-                </div>
-
-            </form>
-        </div>
-
-        <div class="login-card__footer text-center text-muted py-3">
-            <small>&copy; 2025 University HR System</small>
+                    <!-- Submit Button -->
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-primary btn-login">
+                            Sign In
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="card-footer text-center border-0 bg-transparent py-3 text-muted" style="font-size: 0.8rem; border-top: 1px solid var(--border-color);">
+                &copy; @DateTime.Now.Year University HR System
+            </div>
         </div>
     </div>
 

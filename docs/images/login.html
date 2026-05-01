@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Screen Preview</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --bg-base: #0a0e17; 
+            --bg-surface: rgba(18, 26, 43, 0.7);
+            --border-color: rgba(0, 210, 255, 0.15);
+            --text-primary: #f0f4f8;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-color: #00d2ff;
+            --accent-hover: #33dbff;
+            --shadow-lg: 0 16px 32px rgba(0,0,0,0.6);
+            --shadow-glow: 0 0 15px rgba(0, 210, 255, 0.15);
+            --radius-sm: 8px;
+            --radius-md: 12px; 
+            --font-family: 'Inter', system-ui, sans-serif;
+            --transition-fast: 0.15s ease;
+        }
+        body { 
+            background-color: #0a0e17; 
+            color: var(--text-primary); 
+            font-family: var(--font-family); 
+            margin: 0; 
+            padding: 0;
+            background-image: radial-gradient(circle at top, rgba(0, 210, 255, 0.05), transparent 40%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .login-card { width: 100%; max-width: 380px; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); overflow: hidden; margin: 0 auto;}
+        .login-card__header { text-align: center; padding: 2rem 2rem 1rem; border-bottom: 1px solid var(--border-color); background: rgba(0,0,0,0.2); }
+        .login-card__header i { color: var(--accent-color); font-size: 2.5rem; margin-bottom: 1rem; }
+        .login-card__header h3 { font-weight: 600; margin: 0 0 0.25rem 0; font-size: 1.25rem; color: var(--text-primary); }
+        .login-card__header p { color: var(--text-muted); font-size: 0.85rem; margin: 0; }
+        .login-card__body { padding: 1.5rem 2rem 2rem; }
+        .form-label { color: var(--text-secondary); font-weight: 500; margin-bottom: 0.5rem; font-size: 0.85rem; display: block; }
+        .form-control { width: 100%; background-color: rgba(0,0,0,0.3); border: 1px solid var(--border-color); color: var(--text-primary); border-radius: var(--radius-sm); padding: 0.6rem 0.75rem; transition: all var(--transition-fast); font-family: var(--font-family); box-sizing: border-box; }
+        .form-control:focus { background-color: rgba(0,0,0,0.5); border-color: var(--accent-color); box-shadow: var(--shadow-glow); outline: none; }
+        .btn { font-weight: 600; border-radius: var(--radius-sm); padding: 0.6rem 1.2rem; display: inline-flex; align-items: center; justify-content: center; font-size: 0.85rem; border: 1px solid transparent; cursor: pointer; }
+        .btn-primary { background-color: var(--accent-color); color: #000; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-card__header">
+            <i class="fas fa-university"></i>
+            <h3>Welcome Back</h3>
+            <p>Sign in to University HR System</p>
+        </div>
+        <div class="login-card__body">
+            <div style="margin-bottom: 1.25rem;">
+                <label class="form-label">User ID / Email</label>
+                <input type="text" class="form-control" placeholder="Enter ID" />
+            </div>
+            <div style="margin-bottom: 1.5rem;">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" placeholder="••••••••" />
+            </div>
+            <button class="btn btn-primary" style="width: 100%;">Sign In</button>
+        </div>
+    </div>
+</body>
+</html>

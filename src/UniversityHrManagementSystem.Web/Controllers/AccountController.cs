@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Uni_HR_Management_System.Models;
 
 namespace Uni_HR_Management_System.Controllers
@@ -42,7 +42,13 @@ namespace Uni_HR_Management_System.Controllers
           }
           else
           {
+            bool isUpperBoard = false;
+            var empWithRoles = _context.Employees.Where(e => e.EmployeeId == empId).SelectMany(e => e.RoleNames).ToList();
+            if(empWithRoles.Any(r => r.RoleName == "Dean" || r.RoleName == "Vice Dean" || r.RoleName == "President" || r.RoleName == "Vice President")) {
+                isUpperBoard = true;
+            }
             HttpContext.Session.SetString("Role", "Academic");
+            HttpContext.Session.SetString("IsDean", isUpperBoard ? "True" : "False");
             return RedirectToAction("Index", "Employee");
           }
         }

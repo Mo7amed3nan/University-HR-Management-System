@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 @using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor HttpContextAccessor
 
@@ -7,21 +7,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#0b1220" />
+    <meta name="theme-color" content="#0f1115" />
     <title>@ViewData["Title"] - University HR</title>
     <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/UniversityHrManagementSystem.Web.styles.css" asp-append-version="true" />
 </head>
-<body class="app-shell-body">
+<body>
     @{
         var userRole = HttpContextAccessor.HttpContext?.Session.GetString("Role");
         var roleLabel = string.IsNullOrWhiteSpace(userRole) ? "Guest" : userRole;
@@ -29,7 +30,11 @@
     }
 
     <div class="app-shell">
+        
+        <!-- Mobile Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
+        <!-- Left Sidebar -->
         <nav id="leftSidebar" class="sidebar">
             <div class="sidebar-header">
                 <div class="sidebar-brand">
@@ -42,19 +47,19 @@
                 <span class="sidebar-role-badge">@roleLabel Panel</span>
             </div>
 
-            <ul class="nav flex-column mt-3">
+            <ul class="nav flex-column">
                 <li class="nav-item">
                     @if (userRole == "Admin")
                     {
-                        <a class="nav-link" href="/Admin/Index"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a class="nav-link" href="/Admin/Index"><i class="fas fa-home"></i> Dashboard</a>
                     }
                     else if (userRole == "HR")
                     {
-                        <a class="nav-link" href="/HR/Index"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a class="nav-link" href="/HR/Index"><i class="fas fa-home"></i> Dashboard</a>
                     }
                     else
                     {
-                        <a class="nav-link" href="/Employee/Index"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                        <a class="nav-link" href="/Employee/Index"><i class="fas fa-home"></i> Dashboard</a>
                     }
                 </li>
 
@@ -63,7 +68,7 @@
                 {
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#menuReports" role="button">
-                            <i class="fas fa-chart-bar"></i> Reports <i class="fas fa-caret-down float-end"></i>
+                            <i class="fas fa-chart-pie"></i> Reports <i class="fas fa-caret-down"></i>
                         </a>
                         <div class="collapse collapse-menu" id="menuReports">
                             <a class="nav-link" href="/Admin/ListEmployees">All Employees</a>
@@ -75,7 +80,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#menuActions" role="button">
-                            <i class="fas fa-cogs"></i> System Actions <i class="fas fa-caret-down float-end"></i>
+                            <i class="fas fa-sliders-h"></i> System Actions <i class="fas fa-caret-down"></i>
                         </a>
                         <div class="collapse collapse-menu" id="menuActions">
                             <a class="nav-link" href="/Admin/AddHoliday">Add Holiday</a>
@@ -93,7 +98,7 @@
                 {
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#menuHRLeaves" role="button">
-                            <i class="fas fa-check-circle"></i> Leave Approvals <i class="fas fa-caret-down float-end"></i>
+                            <i class="fas fa-check-double"></i> Leave Approvals <i class="fas fa-caret-down"></i>
                         </a>
                         <div class="collapse collapse-menu" id="menuHRLeaves">
                             <a class="nav-link" href="/HR/ProcessAnnualAccidentalLeaves">Annual/Accidental</a>
@@ -103,7 +108,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#menuPayroll" role="button">
-                            <i class="fas fa-money-check-alt"></i> Payroll & Ded. <i class="fas fa-caret-down float-end"></i>
+                            <i class="fas fa-file-invoice-dollar"></i> Payroll & Ded. <i class="fas fa-caret-down"></i>
                         </a>
                         <div class="collapse collapse-menu" id="menuPayroll">
                             <a class="nav-link" href="/HR/ApplyDeduction">Apply Deduction</a>
@@ -117,7 +122,7 @@
                 {
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#menuInfo" role="button">
-                            <i class="fas fa-user-circle"></i> My Info <i class="fas fa-caret-down float-end"></i>
+                            <i class="fas fa-id-badge"></i> My Info <i class="fas fa-caret-down"></i>
                         </a>
                         <div class="collapse collapse-menu" id="menuInfo">
                             <a class="nav-link" href="/Employee/ViewPerformance">Performance</a>
@@ -130,7 +135,7 @@
 
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#menuLeave" role="button">
-                            <i class="fas fa-calendar-plus"></i> Apply Leave <i class="fas fa-caret-down float-end"></i>
+                            <i class="fas fa-calendar-day"></i> Apply Leave <i class="fas fa-caret-down"></i>
                         </a>
                         <div class="collapse collapse-menu" id="menuLeave">
                             <a class="nav-link" href="/Employee/SubmitAnnualLeave">Annual</a>
@@ -141,19 +146,22 @@
                         </div>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#menuDean" role="button">
-                            <i class="fas fa-user-tie"></i> Dean Actions <i class="fas fa-caret-down float-end"></i>
-                        </a>
-                        <div class="collapse collapse-menu" id="menuDean">
-                            <a class="nav-link" href="/Employee/ViewPendingUnpaidLeave">Approve Unpaid</a>
-                            <a class="nav-link" href="/Employee/ViewPendingAnnualLeave">Approve Annual</a>
-                            <a class="nav-link" href="/Employee/EvaluateEmployee">Evaluate Employee</a>
-                        </div>
-                    </li>
+                    @if (HttpContextAccessor.HttpContext?.Session.GetString("IsDean") == "True")
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#menuDean" role="button">
+                                <i class="fas fa-user-tie"></i> Dean Actions <i class="fas fa-caret-down"></i>
+                            </a>
+                            <div class="collapse collapse-menu" id="menuDean">
+                                <a class="nav-link" href="/Employee/ViewPendingUnpaidLeave">Approve Unpaid</a>
+                                <a class="nav-link" href="/Employee/ViewPendingAnnualLeave">Approve Annual</a>
+                                <a class="nav-link" href="/Employee/EvaluateEmployee">Evaluate Employee</a>
+                            </div>
+                        </li>
+                    }
                 }
 
-                <li class="nav-item mt-5">
+                <li class="nav-item mt-auto">
                     <a class="nav-link nav-link--logout" href="/Account/Logout">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
@@ -163,38 +171,55 @@
 
         <!-- MAIN CONTENT -->
         <div class="content-wrapper">
-            <div class="page-toolbar">
-                <button id="sidebarToggle" class="btn btn-shell" type="button" aria-pressed="false" aria-controls="leftSidebar" title="Toggle menu">
+            <header class="page-toolbar">
+                <button id="sidebarToggle" class="btn-shell" type="button" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
 
                 <div class="page-heading">
-                    <p class="page-heading__eyebrow">University HR</p>
+                    <p class="page-heading__eyebrow">Overview</p>
                     <h1 class="page-heading__title">@pageTitle</h1>
                 </div>
-            </div>
+                
+                <div class="ms-auto d-flex align-items-center gap-3">
+                    <div class="d-none d-md-flex align-items-center gap-2">
+                        <img src="https://ui-avatars.com/api/?name=@(roleLabel)&background=10b981&color=fff" alt="User Avatar" class="rounded-circle" width="36" height="36" />
+                        <div class="d-flex flex-column">
+                            <span class="fs-6 fw-semibold text-white">@userRole</span>
+                            <small class="text-muted" style="font-size: 0.7rem;">Active Session</small>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
-            <main role="main" class="content-surface animate__animated animate__fadeIn">
+            <main role="main" class="content-surface animate-fade-in">
                 @RenderBody()
             </main>
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        (function () {
+        document.addEventListener('DOMContentLoaded', function () {
             const sidebar = document.getElementById('leftSidebar');
             const toggleBtn = document.getElementById('sidebarToggle');
+            const overlay = document.getElementById('sidebarOverlay');
 
-            if (!sidebar || !toggleBtn) return;
+            function toggleSidebar() {
+                sidebar.classList.toggle('show');
+                overlay.classList.toggle('show');
+            }
 
-            toggleBtn.addEventListener('click', function () {
-                const isCollapsed = sidebar.classList.toggle('collapsed');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', toggleSidebar);
+            }
 
-                toggleBtn.setAttribute('aria-pressed', isCollapsed ? 'true' : 'false');
-            });
-        })();
+            if (overlay) {
+                overlay.addEventListener('click', toggleSidebar);
+            }
+        });
     </script>
 </body>
 </html>
