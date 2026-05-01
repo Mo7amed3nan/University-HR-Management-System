@@ -1,8 +1,7 @@
-﻿create DATABASE University_HR_ManagementSystem_5;
-GO
-USE University_HR_ManagementSystem_5;
-GO
-
+﻿-- create DATABASE University_HR_ManagementSystem_5;
+-- GO
+-- USE University_HR_ManagementSystem_5;
+-- GO
 
 CREATE FUNCTION HRSalary_calculation
 (@employee_ID int) 

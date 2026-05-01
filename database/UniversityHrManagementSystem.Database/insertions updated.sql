@@ -1,5 +1,5 @@
-﻿USE University_HR_ManagementSystem_5;
-go
+﻿-- USE University_HR_ManagementSystem_5;
+-- go
 
 
  
