@@ -70,18 +70,12 @@ Use the following accounts to explore different roles:
 
 ---
 
-### Prerequisites
+## Prerequisites
 
-- .NET 8 SDK  
-- Visual Studio 2022 (recommended)  
-- SQL Server  
+- .NET 8 SDK
+- Visual Studio 2022
+- SQL Server
 
-### Installation
-
-**1. Clone the repository**
-```bash
-git clone https://github.com/your-username/University-HR-Management-System.git
-cd University-HR-Management-System
 
 ## 📂 Project Structure
 
