@@ -96,6 +96,14 @@ University-HR-Management-System/
 
 ---
 
+## 🗄️ Database Schema (EERD)
+
+The Enhanced Entity-Relationship Diagram (EERD) illustrates the normalized structure of the database, consisting of tables managing employees, departments, payrolls, and leaves.
+
+<img src="docs/images/eerd.png" width="800" alt="Database EERD">
+
+---
+
 ## 📸 Screenshots
 
 <!-- Replace the paths below with actual image paths once you take screenshots -->
