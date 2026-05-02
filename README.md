@@ -38,7 +38,9 @@
 You can try the system directly without installing anything:
 
 🔗 **Live URL:**  
-<https://uni-hr-system-bwcje8fjd4eme6b0.italynorth-01.azurewebsites.net>i
+<https://uni-hr-system-bwcje8fjd4eme6b0.italynorth-01.azurewebsites.net>
+
+> **Note:** Because this demo is hosted on a free Azure subdomain (`azurewebsites.net`) and includes a login page, some browsers (like Google Chrome) may incorrectly flag it as a "Deceptive site" or "Dangerous site". This is a standard false positive for new portfolio projects. You can safely click **Details** and then **Visit this unsafe site** to proceed.
 
 ### Test Accounts
 
