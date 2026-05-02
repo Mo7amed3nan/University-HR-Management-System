@@ -12,18 +12,55 @@
 </div>
 
 ---
-
 ## ✨ Key Features
 
-*   **🔒 Role-Based Access Control (RBAC):** Tailored dashboards and permissions for **Admins, HR Officers, Deans/HODs, and Standard Employees**.
-*   **🌌 Modern & Responsive UI:** A custom, futuristic "Glassmorphism" interface with neon accents, smooth transitions, and a mobile-first responsive grid.
-*   **🏖️ Comprehensive Leave Management:** Automated workflows for requesting, evaluating, and approving Annual, Medical, Accidental, Unpaid, and Compensation leaves.
-*   **⏱️ Attendance Tracking:** Real-time logging and heuristic evaluation of daily employee attendance and performance.
-*   **💰 Payroll & Deductions:** Automated monthly payroll generation, dynamic deduction calculation, and clear financial breakdowns for employees.
-*   **📊 Department Statistics:** Granular reporting on departmental efficiency, rejected leaves, and staff performance metrics.
+- **Modern & Responsive UI**  
+  Clean and simple interface that works well on all devices.
+
+- **Role-Based Access**  
+  Different dashboards and permissions for Admin, HR, Dean, and Employees.
+
+- **Leave Management**  
+  Employees can request leaves and managers can approve or reject them.
+
+- **Attendance Tracking**  
+  Track employee attendance and daily activity.
+
+- **Payroll System**  
+  Manage salaries, deductions, and monthly payments.
+
+- **Reports & Statistics**  
+  View basic insights about employees and departments.
 
 ---
+## 🌐 Live Demo
 
+You can try the system directly without installing anything:
+
+🔗 **Live URL:**  
+<https://uni-hr-system-bwcje8fjd4eme6b0.italynorth-01.azurewebsites.net>i
+
+### Test Accounts
+
+Use the following accounts to explore different roles:
+
+- **Admin**
+  - Username: `admin`
+  - Password: `admin123`
+
+- **HR**
+  - Username: `hr`
+  - Password: `hr123`
+
+- **Employee**
+  - Username: `employee`
+  - Password: `emp123`
+
+- **Dean**
+  - Username: `dean`
+  - Password: `dean123`
+
+---
 ## 🛠️ Tech Stack
 
 *   **Backend:** C#, ASP.NET Core MVC (.NET 8)
@@ -33,39 +70,18 @@
 
 ---
 
-## 🚀 Getting Started
-
 ### Prerequisites
 
-*   [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) or newer
-*   [Visual Studio 2022](https://visualstudio.microsoft.com/) (Recommended)
-*   SQL Server (LocalDB, Express, or Full)
+- .NET 8 SDK  
+- Visual Studio 2022 (recommended)  
+- SQL Server  
 
-### Installation & Setup
+### Installation
 
-**1. Clone the Repository**
+**1. Clone the repository**
 ```bash
 git clone https://github.com/your-username/University-HR-Management-System.git
 cd University-HR-Management-System
-```
-
-**2. Initialize the Database**
-*   **Option A (Visual Studio):** Open `database/UniversityHrManagementSystem.Database.sln` and publish the `.sqlproj` to your SQL Server instance.
-*   **Option B (Manual scripts):** Execute the SQL schema and data insertion scripts located in `database/UniversityHrManagementSystem.Database/queries/` using SQL Server Management Studio (SSMS).
-
-**3. Configure the Application**
-*   Open `src/UniversityHrManagementSystem.Web/appsettings.json`.
-*   Update the `"DefaultConnection"` string to point to your local SQL Server instance.
-
-**4. Build and Run**
-```bash
-dotnet restore .\src\UniversityHrManagementSystem.sln
-dotnet build .\src\UniversityHrManagementSystem.sln -c Debug
-dotnet run --project .\src\UniversityHrManagementSystem.Web\UniversityHrManagementSystem.Web.csproj
-```
-The application will launch on `https://localhost:port`.
-
----
 
 ## 📂 Project Structure
 
@@ -88,19 +104,17 @@ University-HR-Management-System/
 
 ## 📸 Screenshots
 
-![alt text](docs/images/image.png)
-
-
-
 <!-- Replace the paths below with actual image paths once you take screenshots -->
-- **Login Screen:** <br> `<img src="docs/images/login.png" width="600" alt="Login Screen">`
-- **Admin Dashboard:** <br> `<img src="docs/images/admin.png" width="600" alt="Admin Dashboard">`
-- **Employee View:** <br> `<img src="docs/images/employee.png" width="600" alt="Employee View">`
+- **Login Screen:** <br> <img src="docs/images/login.png" width="600" alt="Login Screen">
+- **Admin Dashboard:** <br> <img src="docs/images/admin.png" width="600" alt="Admin Dashboard">
+- **Employee View:** <br> <img src="docs/images/employee.png" width="600" alt="Employee View">
 
 ---
 
 ## 🤝 Contributors
 
-- **Mohamed Enan** - [LinkedIn Profile](https://www.linkedin.com/in/mohamed-enan/)
-- **[Contributor Name]** - [LinkedIn Profile](https://www.linkedin.com/)
-- **[Contributor Name]** - [LinkedIn Profile](https://www.linkedin.com/)
+- **Mohamed Enan** - [LinkedIn Profile](https://www.linkedin.com/in/mohamed-enan1/)
+- **Mahmoud Abohady** - [LinkedIn Profile](https://www.linkedin.com/in/mahmoud-abohady/)
+- **Mohamed Shams** - [LinkedIn Profile](https://www.linkedin.com/in/mohamedshams01/)
+- **Ziad Abdou** - [LinkedIn Profile](https://www.linkedin.com/in/ziad-abdou-a97ab8293/)
+- **Youssef Maged** - [LinkedIn Profile](https://www.linkedin.com/in/youssef-maged-0563161b8/)
